@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +10,7 @@ public class GameController : MonoBehaviour
     public List<Sprite> pctrList = new List<Sprite>();
 
     private bool firstPair, secondPair;
-    private int guessAmount, guessLimit, gameGuesses;
+    private int CorrectPair, PairLimit, Guesses;
 
     private string firstPairName, secondPairName;
 
@@ -28,6 +27,8 @@ public class GameController : MonoBehaviour
         getButtons();
         AddListener();
         AddPairs();
+        Shuffle(pctrList);
+        Guesses = pctrList.Count / 2;
     }
 
     
@@ -83,14 +84,52 @@ public class GameController : MonoBehaviour
             secondPairIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
             secondPairName = pctrList[secondPairIndex].name;
             bttnList[secondPairIndex].image.sprite = pctrList[secondPairIndex];
+            Guesses++;
+            StartCoroutine(PairCheck());
         }
 
+        
+    }
+
+    IEnumerator PairCheck() {
+        yield return new WaitForSeconds(1f);
         if (firstPairName == secondPairName)
         {
+            yield return new WaitForSeconds(.5f);
+            bttnList[firstPairIndex].interactable = false;
+            bttnList[secondPairIndex].interactable = false;
+
+            bttnList[firstPairIndex].image.color = new Color(0, 0, 0, 0);
+            bttnList[secondPairIndex].image.color = new Color(0, 0, 0, 0);
             Debug.Log("Perfect Match");
+            LimitCheck();
         }
-        else {
+        else
+        {
+            bttnList[firstPairIndex].image.sprite = Background;
+            bttnList[secondPairIndex].image.sprite = Background;
             Debug.Log("Didn't Match");
         }
+        yield return new WaitForSeconds(.5f);
+
+        firstPair = secondPair = false;
+    }
+
+    void LimitCheck() {
+        CorrectPair++;
+        if (CorrectPair == PairLimit) {
+            Debug.Log("Game Cleared");
+            Debug.Log("you've made" + Guesses + "guesses to finish");
+        }
+    }
+
+    void Shuffle(List<Sprite> list) {
+        for (int i = 0; i < list.Count; i++) {
+            Sprite temp = list[i];
+            int randomint = Random.Range(0, list.Count);
+            list[i] = list[randomint];
+            list[randomint] = temp;
+        }
+        
     }
 }
