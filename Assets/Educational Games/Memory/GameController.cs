@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private Sprite Background;
+    [SerializeField] private string spriteName;
     public List<Button> bttnList = new List<Button>();
     public Sprite[] pictures;
     public List<Sprite> pctrList = new List<Sprite>();
@@ -20,7 +21,7 @@ public class GameController : MonoBehaviour
     // 
     private void Awake()
     {
-        pictures = Resources.LoadAll<Sprite>("Sprites/Pairing Pictures");
+        pictures = Resources.LoadAll<Sprite>("Sprites/"+ spriteName);
     }
     void Start()
     {
