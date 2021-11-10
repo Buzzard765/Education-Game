@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 604205481}
+      - m_Target: {fileID: 0}
         m_MethodName: loadlevel
         m_Mode: 5
         m_Arguments:
@@ -320,14 +320,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: -137
+    m_Left: -220
     m_Right: 0
-    m_Top: 73
+    m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 250, y: 190.4}
+  m_CellSize: {x: 300, y: 250}
   m_Spacing: {x: 30.9, y: 69}
   m_Constraint: 2
   m_ConstraintCount: 2
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 51110135}
   - component: {fileID: 51110134}
   m_Layer: 0
-  m_Name: Activity
+  m_Name: Social
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,7 +412,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 51110135}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 604205481}
+        m_MethodName: loadlevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &51110135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,7 +592,7 @@ GameObject:
   - component: {fileID: 140246839}
   - component: {fileID: 140246838}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Study
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -604,8 +615,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.876556}
-  m_AnchoredPosition: {x: 428.35645, y: -355.1913}
-  m_SizeDelta: {x: 856.6854, y: 554.26263}
+  m_AnchoredPosition: {x: 639.87, y: -531.02}
+  m_SizeDelta: {x: 1279.7407, y: 831.4278}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &140246838
 MonoBehaviour:
@@ -1690,14 +1701,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: -137
+    m_Left: -220
     m_Right: 0
-    m_Top: 73
+    m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 250, y: 190.4}
+  m_CellSize: {x: 300, y: 250}
   m_Spacing: {x: 30.9, y: 69}
   m_Constraint: 2
   m_ConstraintCount: 2
@@ -2062,7 +2073,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 604205481}
+      - m_Target: {fileID: 0}
         m_MethodName: loadlevel
         m_Mode: 5
         m_Arguments:
@@ -2204,7 +2215,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 604205481}
+      - m_Target: {fileID: 0}
         m_MethodName: loadlevel
         m_Mode: 5
         m_Arguments:
@@ -2678,8 +2689,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 604205482}
-  - component: {fileID: 604205481}
   - component: {fileID: 604205483}
+  - component: {fileID: 604205481}
   m_Layer: 0
   m_Name: All UI Button Script
   m_TagString: Untagged
@@ -2696,10 +2707,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 604205480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eb3508fe50e52548902de036200cbe1, type: 3}
+  m_Script: {fileID: 11500000, guid: bfed3fb015dacab4782c6aad3319b965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UISFX: {fileID: 604205483}
+  UISFX: {fileID: 0}
 --- !u!4 &604205482
 Transform:
   m_ObjectHideFlags: 0
@@ -2823,7 +2834,7 @@ GameObject:
   - component: {fileID: 609929341}
   - component: {fileID: 609929340}
   m_Layer: 0
-  m_Name: Activity
+  m_Name: Fruit Collector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2900,7 +2911,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Language Quiz
+          m_StringArgument: Fruit Collector
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &609929341
@@ -3347,9 +3358,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Coming
-
-    Soon'
+  m_Text: Social
 --- !u!222 &654178149
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3697,7 +3706,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
@@ -3936,7 +3945,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Coming Soon
+  m_Text: 'Fruit Collector
+
+'
 --- !u!222 &779432145
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4107,7 +4118,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 604205481}
+      - m_Target: {fileID: 0}
         m_MethodName: loadlevel
         m_Mode: 5
         m_Arguments:
@@ -4729,15 +4740,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 260
     m_Right: 0
-    m_Top: 50
+    m_Top: 210
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 291.13, y: 391.5}
-  m_Spacing: {x: 47.06, y: 0}
+  m_CellSize: {x: 300, y: 500}
+  m_Spacing: {x: 100, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &985959847
@@ -5058,7 +5069,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 604205481}
+      - m_Target: {fileID: 0}
         m_MethodName: loadlevel
         m_Mode: 5
         m_Arguments:
@@ -5300,8 +5311,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 821.945, y: -245.75}
-  m_SizeDelta: {x: 291.13, y: 391.5}
+  m_AnchoredPosition: {x: 1210, y: -460}
+  m_SizeDelta: {x: 300, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1098735275
 MonoBehaviour:
@@ -5667,15 +5678,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 260
     m_Right: 0
-    m_Top: 50
+    m_Top: 210
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 291.13, y: 391.5}
-  m_Spacing: {x: 47.06, y: 0}
+  m_CellSize: {x: 300, y: 500}
+  m_Spacing: {x: 100, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1145460926
@@ -5717,7 +5728,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6687593, y: 0.8731482}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.7000122, y: 1.829956}
+  m_AnchoredPosition: {x: 0.70007324, y: 1.829956}
   m_SizeDelta: {x: 5.0705566, y: -3.6519775}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1145460928
@@ -5868,14 +5879,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: -137
+    m_Left: -220
     m_Right: 0
-    m_Top: 73
+    m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 250, y: 190.4}
+  m_CellSize: {x: 300, y: 250}
   m_Spacing: {x: 30.9, y: 69}
   m_Constraint: 2
   m_ConstraintCount: 2
@@ -6560,8 +6571,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -427.08826, y: -403.84396}
-  m_SizeDelta: {x: 854.1767, y: 632.3224}
+  m_AnchoredPosition: {x: -641.05, y: -606.82}
+  m_SizeDelta: {x: 1282.0945, y: 946.83997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326055450
 MonoBehaviour:
@@ -7907,8 +7918,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.876556}
-  m_AnchoredPosition: {x: -0.35656738, y: -355.1913}
-  m_SizeDelta: {x: 854.41766, y: 554.26263}
+  m_AnchoredPosition: {x: -0.2999878, y: -532.7199}
+  m_SizeDelta: {x: 1280.6282, y: 828.02484}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1692464266
 MonoBehaviour:
@@ -8029,7 +8040,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 604205481}
+      - m_Target: {fileID: 0}
         m_MethodName: loadlevel
         m_Mode: 5
         m_Arguments:
@@ -8096,7 +8107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1710830981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8114,7 +8125,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8900309, y: 0.03078357}
   m_AnchorMax: {x: 0.98425835, y: 0.120066464}
-  m_AnchoredPosition: {x: -26.344604, y: 50.651093}
+  m_AnchoredPosition: {x: -26.344604, y: 50.651}
   m_SizeDelta: {x: -94.05423, y: -35.129715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1710830982
@@ -8507,8 +8518,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 145.565, y: -245.75}
-  m_SizeDelta: {x: 291.13, y: 391.5}
+  m_AnchoredPosition: {x: 410, y: -460}
+  m_SizeDelta: {x: 300, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1765594208
 MonoBehaviour:
@@ -9175,8 +9186,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -428.70593, y: -360.00226}
-  m_SizeDelta: {x: 850.9414, y: 544.6413}
+  m_AnchoredPosition: {x: -642.66, y: -540.14}
+  m_SizeDelta: {x: 1278.8594, y: 813.4882}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1970527290
 GameObject:
@@ -9411,8 +9422,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 483.755, y: -245.75}
-  m_SizeDelta: {x: 291.13, y: 391.5}
+  m_AnchoredPosition: {x: 810, y: -460}
+  m_SizeDelta: {x: 300, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2077168722
 MonoBehaviour:
@@ -9597,7 +9608,7 @@ GameObject:
   - component: {fileID: 2080486814}
   - component: {fileID: 2080486813}
   m_Layer: 5
-  m_Name: Panel (5)
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9620,8 +9631,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.876556}
-  m_AnchoredPosition: {x: -428.72363, y: -355.1913}
-  m_SizeDelta: {x: 850.9765, y: 554.26263}
+  m_AnchoredPosition: {x: -642.66, y: -531.91}
+  m_SizeDelta: {x: 1278.8689, y: 829.9532}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2080486813
 MonoBehaviour:

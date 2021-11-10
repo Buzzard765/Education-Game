@@ -21,11 +21,7 @@ public class Tetrimino : MonoBehaviour
         Drop(1);                  
     }
 
-    //controls for android
-    void CheckInputPC() {
-    
-    }
-
+    //controls for android   
     public void MoveXPos(float x ) {
         transform.position += new Vector3(x, 0, 0);
         if (checkPos())
@@ -88,18 +84,20 @@ public class Tetrimino : MonoBehaviour
             }
             else
             {
+                Debug.Log("next");
                 transform.position += new Vector3(0, y, 0);
+                enabled = false;
+                FindObjectOfType<GManager>().spawnTetrimino();                
             }
             fall = Time.time;
             Debug.Log(fall);
         }        
     }
-
     bool checkPos() {
         foreach (Transform mino in transform) {
-            Vector2 pos = FindObjectOfType<Core>().Round(mino.position);
+            Vector2 pos = FindObjectOfType<GManager>().Round(mino.position);
 
-            if (FindObjectOfType<Core>().insideGrid(pos) == false)
+            if (FindObjectOfType<GManager>().insideGrid(pos) == false)
             {
                 return false;
             }

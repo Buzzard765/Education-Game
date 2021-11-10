@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 717.0004, y: -542.06}
-  m_SizeDelta: {x: 75, y: 75}
+  m_AnchoredPosition: {x: 1025, y: -766.10004}
+  m_SizeDelta: {x: 108.86777, y: 108.86777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &100998444
 MonoBehaviour:
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1260394905}
+      - m_Target: {fileID: 0}
         m_MethodName: answercheck
         m_Mode: 5
         m_Arguments:
@@ -626,7 +626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 145.1, y: 298.5}
+  m_AnchoredPosition: {x: 291, y: 471.43}
   m_SizeDelta: {x: 198.0813, y: 53.921387}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &493119009
@@ -882,10 +882,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1139,8 +1139,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 72.461, y: -542.06}
-  m_SizeDelta: {x: 75, y: 75}
+  m_AnchoredPosition: {x: 89.400024, y: -766.10004}
+  m_SizeDelta: {x: 108.86777, y: 108.86777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117450274
 MonoBehaviour:
@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1260394905}
+      - m_Target: {fileID: 0}
         m_MethodName: answercheck
         m_Mode: 5
         m_Arguments:
@@ -1259,132 +1259,108 @@ MonoBehaviour:
   m_GameObject: {fileID: 1260394904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ec385526f313f428181c7c57d9e809, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ce89e6617c888f408ee4985e14401c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   QuestionList:
-  - soal: 1+3=?
-    pilA: 4
-    pilB: 2
-    pilC: 3
-    pilD: 5
-    A: 1
-    B: 0
-    C: 0
-    D: 0
-    waktu: 5
-  - soal: 5+7=?
-    pilA: 11
-    pilB: 12
-    pilC: 13
-    pilD: 14
-    A: 0
-    B: 1
-    C: 0
-    D: 0
-    waktu: 6
-  - soal: 9-3=?
-    pilA: 7
-    pilB: 4
-    pilC: 6
-    pilD: 3
-    A: 0
-    B: 0
-    C: 1
-    D: 0
-    waktu: 7
-  - soal: 10-4
-    pilA: 7
-    pilB: 6
-    pilC: 5
-    pilD: 4
-    A: 0
-    B: 1
-    C: 0
-    D: 0
-    waktu: 7
-  - soal: 6+8
-    pilA: 14
-    pilB: 13
-    pilC: 12
-    pilD: 11
-    A: 1
-    B: 0
-    C: 0
-    D: 0
-    waktu: 7
-  - soal: 11+12
-    pilA: 22
-    pilB: 23
-    pilC: 24
-    pilD: 25
-    A: 0
-    B: 1
-    C: 0
-    D: 0
-    waktu: 7
-  - soal: 13-5
-    pilA: 20
-    pilB: 9
-    pilC: 8
-    pilD: 7
-    A: 0
-    B: 0
-    C: 1
-    D: 0
-    waktu: 7
-  - soal: 14-9
-    pilA: 5
-    pilB: 6
-    pilC: 7
-    pilD: 8
-    A: 1
-    B: 0
-    C: 0
-    D: 0
-    waktu: 7
-  - soal: 2 X 3
-    pilA: 6
-    pilB: 7
-    pilC: 8
-    pilD: 9
-    A: 1
-    B: 0
-    C: 0
-    D: 0
-    waktu: 7
-  - soal: 5 X 3
-    pilA: 15
-    pilB: 17
-    pilC: 19
-    pilD: 21
-    A: 1
-    B: 0
-    C: 0
-    D: 0
-    waktu: 7
-  - soal: '21 : 7 = ?'
-    pilA: 2
-    pilB: 3
-    pilC: 4
-    pilD: 5
-    A: 0
-    B: 1
-    C: 0
-    D: 0
-    waktu: 7
-  - soal: '45 : 5'
-    pilA: 3
-    pilB: 6
-    pilC: 9
-    pilD: 12
-    A: 0
-    B: 0
-    C: 1
-    D: 0
-    waktu: 7
-  score: 0
-  Victory: {fileID: 0}
+  - gambar: {fileID: 0}
+    QuestionContent: 1+3
+    answers:
+    - content: 2
+    - content: 4
+    - content: 6
+    - content: 8
+    answerIndex: 1
+  - gambar: {fileID: 0}
+    QuestionContent: 5+7=?
+    answers:
+    - content: 11
+    - content: 12
+    - content: 13
+    - content: 14
+    answerIndex: 1
+  - gambar: {fileID: 0}
+    QuestionContent: 9-3=?
+    answers:
+    - content: 7
+    - content: 4
+    - content: 6
+    - content: 3
+    answerIndex: 2
+  - gambar: {fileID: 0}
+    QuestionContent: 10-4=?
+    answers:
+    - content: 8
+    - content: 7
+    - content: 6
+    - content: 5
+    answerIndex: 2
+  - gambar: {fileID: 0}
+    QuestionContent: 6+8
+    answers:
+    - content: 14
+    - content: 13
+    - content: 12
+    - content: 11
+    answerIndex: 0
+  - gambar: {fileID: 0}
+    QuestionContent: '11+12=?
+
+'
+    answers:
+    - content: 22
+    - content: 23
+    - content: 24
+    - content: 25
+    answerIndex: 1
+  - gambar: {fileID: 0}
+    QuestionContent: 13-5
+    answers:
+    - content: 10
+    - content: 9
+    - content: 8
+    - content: 7
+    answerIndex: 2
+  - gambar: {fileID: 0}
+    QuestionContent: 14-9
+    answers:
+    - content: 5
+    - content: 6
+    - content: 7
+    - content: 8
+    answerIndex: 0
+  - gambar: {fileID: 0}
+    QuestionContent: 2x3
+    answers:
+    - content: 6
+    - content: 7
+    - content: 8
+    - content: 9
+    answerIndex: 0
+  - gambar: {fileID: 0}
+    QuestionContent: 5x3=?
+    answers:
+    - content: 12
+    - content: 15
+    - content: 18
+    - content: 21
+    answerIndex: 1
+  - gambar: {fileID: 0}
+    QuestionContent: '21 : 7 = ?'
+    answers:
+    - content: 2
+    - content: 3
+    - content: 4
+    - content: 5
+    answerIndex: 1
+  - gambar: {fileID: 0}
+    QuestionContent: '45 : 5'
+    answers:
+    - content: 3
+    - content: 6
+    - content: 9
+    - content: 12
+    answerIndex: 2
 --- !u!4 &1260394906
 Transform:
   m_ObjectHideFlags: 0
@@ -1435,8 +1411,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 717, y: -437.24103}
-  m_SizeDelta: {x: 75, y: 75}
+  m_AnchoredPosition: {x: 1025, y: -614}
+  m_SizeDelta: {x: 108.86777, y: 108.86777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1497301550
 MonoBehaviour:
@@ -1481,7 +1457,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1260394905}
+      - m_Target: {fileID: 0}
         m_MethodName: answercheck
         m_Mode: 5
         m_Arguments:
@@ -1754,8 +1730,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 72.46057, y: -437.24103}
-  m_SizeDelta: {x: 75, y: 75}
+  m_AnchoredPosition: {x: 89.4, y: -614}
+  m_SizeDelta: {x: 108.86777, y: 108.86777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2085455764
 MonoBehaviour:
@@ -1800,7 +1776,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1260394905}
+      - m_Target: {fileID: 0}
         m_MethodName: answercheck
         m_Mode: 5
         m_Arguments:
@@ -1861,6 +1837,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 72efb79a22a78644cb2751666e446b4f,
         type: 3}
+    - target: {fileID: 7349978124755188657, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.5000153
+      objectReference: {fileID: 0}
     - target: {fileID: 7349978125504393801, guid: e23bd156afb0e3c46946986023c11ad1,
         type: 3}
       propertyPath: m_FontData.m_Font
@@ -1988,6 +1969,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 269434918}
+    - target: {fileID: 7349978126036385469, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23bd156afb0e3c46946986023c11ad1, type: 3}
 --- !u!224 &1458818656634348430 stripped

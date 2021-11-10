@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb3508fe50e52548902de036200cbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UISFX: {fileID: 0}
+  PausePanel: {fileID: 0}
+  UISFX: {fileID: 6321541596410172780}
 --- !u!82 &6321541596410172780
 AudioSource:
   m_ObjectHideFlags: 0

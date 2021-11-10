@@ -457,10 +457,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1352585876}
-    - target: {fileID: 9159725904541932, guid: 92391ad90ba1b094db3e41c03a867852, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
     - target: {fileID: 9159725904541933, guid: 92391ad90ba1b094db3e41c03a867852, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -628,11 +624,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 249615892}
     m_Modifications:
-    - target: {fileID: 7349978124755188657, guid: e23bd156afb0e3c46946986023c11ad1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1.5000153
-      objectReference: {fileID: 0}
     - target: {fileID: 7349978125886851982, guid: e23bd156afb0e3c46946986023c11ad1,
         type: 3}
       propertyPath: m_Pivot.x
@@ -748,16 +739,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2118170804}
-    - target: {fileID: 7349978126036385468, guid: e23bd156afb0e3c46946986023c11ad1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: loadlevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7349978126036385469, guid: e23bd156afb0e3c46946986023c11ad1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23bd156afb0e3c46946986023c11ad1, type: 3}
 --- !u!224 &1352585875 stripped
@@ -772,12 +753,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1352585874}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1422585920 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6321541596410172780, guid: 43391fd6148345d40a65fe627734d3e5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2118170803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2118170803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -790,11 +765,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllUIButtons
       objectReference: {fileID: 0}
-    - target: {fileID: 6321541596410172781, guid: 43391fd6148345d40a65fe627734d3e5,
-        type: 3}
-      propertyPath: UISFX
-      value: 
-      objectReference: {fileID: 1422585920}
     - target: {fileID: 6321541596410172782, guid: 43391fd6148345d40a65fe627734d3e5,
         type: 3}
       propertyPath: m_RootOrder
