@@ -1751,7 +1751,7 @@ PrefabInstance:
     - target: {fileID: 7349978125886851983, guid: e23bd156afb0e3c46946986023c11ad1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7349978126036385468, guid: e23bd156afb0e3c46946986023c11ad1,
         type: 3}
@@ -2474,8 +2474,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 772941230}
-        m_MethodName: loadlevel
-        m_Mode: 5
+        m_MethodName: MainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2616,7 +2616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1280089919920326610
 RectTransform:
   m_ObjectHideFlags: 0

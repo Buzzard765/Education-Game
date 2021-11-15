@@ -27,7 +27,14 @@ public class QuizQuestion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gambarSoal = GameObject.Find("Question Image").GetComponent<Image>();
+        try
+        {
+            gambarSoal = GameObject.Find("Question Image").GetComponent<Image>();
+        }
+        catch
+        {
+            Debug.Log("Proceeding Without Image");
+        }      
         questiontext = GameObject.Find("Question").GetComponent<Text>();
         answerText[0] = GameObject.Find("A").GetComponent<Text>();
         answerText[1] = GameObject.Find("B").GetComponent<Text>();
@@ -44,8 +51,13 @@ public class QuizQuestion : MonoBehaviour
     {
         if (QuestionList.Count > 0)
         {
-            gambarSoal.sprite = QuestionList[index].gambar;
             questiontext.text = QuestionList[index].QuestionContent;
+            try {
+                gambarSoal.sprite = QuestionList[index].gambar;
+            } catch {
+                Debug.Log("Proceeding Without Image");
+            }           
+            
             for (int i = 0; i < answerText.Length; i++) {
                 answerText[i].text = QuestionList[index].answers[i].content;
             }
