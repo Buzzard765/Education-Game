@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoleSpawning : MonoBehaviour
 {
@@ -16,8 +17,9 @@ public class MoleSpawning : MonoBehaviour
     public float spawnRate;
     private float currentspawnRate;
     private int randomSpot;
-    private int score;
-    [SerializeField]private float time;
+    [SerializeField] private int score;
+    [SerializeField] private float time;
+    [SerializeField] GameObject Panel;
 
     public float time_get {
         get { return time; }
@@ -42,10 +44,14 @@ public class MoleSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time > 0) {
-            RandomizeSpawn();
+        if (time < 0)
+        {
+            StartCoroutine(Result());
         }
-        time -= Time.deltaTime;
+        else {
+            RandomizeSpawn();
+            time -= Time.deltaTime;
+        }
         
     }
 
@@ -66,7 +72,12 @@ public class MoleSpawning : MonoBehaviour
         }
     }
 
-    void spawnMole(int index) {       
+    void spawnMole(int index) {
         AllHoles[index].SetActive(true);
+    }
+
+    IEnumerator Result(){
+        yield return new WaitForSeconds(1);
+        Panel.SetActive(true);
     }
 }

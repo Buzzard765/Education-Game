@@ -2710,6 +2710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfed3fb015dacab4782c6aad3319b965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PausePanel: {fileID: 0}
   UISFX: {fileID: 0}
 --- !u!4 &604205482
 Transform:
@@ -3770,7 +3771,7 @@ GameObject:
   - component: {fileID: 754253616}
   - component: {fileID: 754253615}
   m_Layer: 0
-  m_Name: Activity
+  m_Name: Whack A Mole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3838,7 +3839,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 754253616}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 604205481}
+        m_MethodName: loadlevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Whack A Mole
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &754253616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8140,6 +8152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb3508fe50e52548902de036200cbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PausePanel: {fileID: 0}
   UISFX: {fileID: 0}
 --- !u!114 &1710830983
 MonoBehaviour:
