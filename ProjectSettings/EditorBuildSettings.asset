@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Educational Games/Maze/Maze 3.unity
     guid: 23f44edc3ab0f6b4697b8a78a18aa194
   - enabled: 1
-    path: Assets/Educational Games/Quiz/Language Quiz.unity
+    path: Assets/Educational Games/Quiz/Civics Quiz.unity
     guid: a3a7ab35af3b5e249b2f74705376be78
   - enabled: 1
     path: Assets/Educational Games/Quiz/Math Quiz.unity

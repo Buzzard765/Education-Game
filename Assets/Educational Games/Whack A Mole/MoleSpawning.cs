@@ -20,6 +20,7 @@ public class MoleSpawning : MonoBehaviour
     [SerializeField] private int score;
     [SerializeField] private float time;
     [SerializeField] GameObject Panel;
+    [SerializeField] Text ScoreText, TimeText;
 
     public float time_get {
         get { return time; }
@@ -39,6 +40,8 @@ public class MoleSpawning : MonoBehaviour
         foreach (GameObject holes in AllHoles) {
             holes.SetActive(false);
         }
+
+        //TimeText = GameObject.Find("Time").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -52,7 +55,9 @@ public class MoleSpawning : MonoBehaviour
             RandomizeSpawn();
             time -= Time.deltaTime;
         }
-        
+
+        TimeText.text =  time.ToString("F0");
+        ScoreText.text =   score.ToString();
     }
 
     void RandomizeSpawn() {
