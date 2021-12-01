@@ -7,10 +7,15 @@ public class TicTacToeController : MonoBehaviour
 {
     private int PlayerTurn;
     private int turnCount;
+
     public GameObject[] TurnIcon = new GameObject[2];
     public Sprite[] PlayerIcons = new Sprite[2];
     public Button[] TTTSpace = new Button[9];
     public int[] MarkedSpace;
+    public GameObject[] WinningLine = new GameObject[8];
+
+    int XScore, OScore;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +23,7 @@ public class TicTacToeController : MonoBehaviour
         turnCount = 0;
         TurnIcon[0].SetActive(true);
         TurnIcon[1].SetActive(false);
+        //Turn On All TTTSpaces
         for (int i = 0; i < TTTSpace.Length; i++) {
             TTTSpace[i].interactable = true;
             TTTSpace[i].GetComponent<Image>().sprite = null;
@@ -26,7 +32,11 @@ public class TicTacToeController : MonoBehaviour
         for (int i = 0; i < MarkedSpace.Length; i++) {
             MarkedSpace[i] = -100;
         }
-
+        //Turn Off all Winning Line
+        for (int i = 0; i < WinningLine.Length; i++)
+        {
+            WinningLine[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -40,9 +50,11 @@ public class TicTacToeController : MonoBehaviour
         TTTSpace[slot].interactable = false;
         MarkedSpace[slot] = PlayerTurn+1;
         turnCount++;
-        if (turnCount > 4) {
+        if (turnCount > 4)
+        {
             winnerCheck();
         }
+       
         if (PlayerTurn == 0)
         {
             PlayerTurn = 1;
@@ -70,7 +82,47 @@ public class TicTacToeController : MonoBehaviour
         for (int i = 0; i < solutions.Length; i++) {
             if (solutions[i] == (PlayerTurn + 1) * 3) {
                 Debug.Log("We Have a Winner: Player " + (PlayerTurn + 1) + "!");
+                DisplayWinner(i);
             }
+        }
+    }
+
+    void DisplayWinner(int LineIndex) {
+        
+        WinningLine[LineIndex].SetActive(true);
+        if (PlayerTurn == 0)
+        {
+            OScore++;
+        }
+        else if (PlayerTurn == 1) {
+            XScore++;
+        }
+    }
+
+    void Tie() {
+        Debug.Log("Tie");
+    }
+
+    void Rematch() {
+        PlayerTurn = 0;
+        turnCount = 0;
+        TurnIcon[0].SetActive(true);
+        TurnIcon[1].SetActive(false);
+        //Turn On All TTTSpaces
+        for (int i = 0; i < TTTSpace.Length; i++)
+        {
+            TTTSpace[i].interactable = true;
+            TTTSpace[i].GetComponent<Image>().sprite = null;
+        }
+        MarkedSpace = new int[TTTSpace.Length];
+        for (int i = 0; i < MarkedSpace.Length; i++)
+        {
+            MarkedSpace[i] = -100;
+        }
+        //Turn Off all Winning Line
+        for (int i = 0; i < WinningLine.Length; i++)
+        {
+            WinningLine[i].SetActive(false);
         }
     }
 }
