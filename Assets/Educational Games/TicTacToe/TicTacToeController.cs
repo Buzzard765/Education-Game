@@ -13,19 +13,27 @@ public class TicTacToeController : MonoBehaviour
     public Button[] TTTSpace = new Button[9];
     public int[] MarkedSpace;
     public GameObject[] WinningLine = new GameObject[8];
+    public Button XPlayer, OPlayer;
 
     int XScore, OScore;
+    int drawCondiLine, drawCondiSpace;
+
+    [SerializeField] private Image WinPanel, DrawPanel;
+    [SerializeField] private Text PanelText, XScoreText, OScoreText;
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerTurn = 0;
+        XScore = OScore = 0;
+        //PlayerTurn = 0;
         turnCount = 0;
+        drawCondiLine = 0;
+        drawCondiSpace = 0;
         TurnIcon[0].SetActive(true);
-        TurnIcon[1].SetActive(false);
+        TurnIcon[1].SetActive(true);
         //Turn On All TTTSpaces
         for (int i = 0; i < TTTSpace.Length; i++) {
-            TTTSpace[i].interactable = true;
+            TTTSpace[i].interactable = false;
             TTTSpace[i].GetComponent<Image>().sprite = null;
         }
         MarkedSpace = new int[TTTSpace.Length];
@@ -46,13 +54,22 @@ public class TicTacToeController : MonoBehaviour
     }
 
     public void TTTButton(int slot) {
+
+        XPlayer.interactable = false;
+        OPlayer.interactable = false;
+
         TTTSpace[slot].image.sprite = PlayerIcons[PlayerTurn];
         TTTSpace[slot].interactable = false;
         MarkedSpace[slot] = PlayerTurn+1;
         turnCount++;
+        drawCondiSpace++;
         if (turnCount > 4)
         {
-            winnerCheck();
+            bool isWinner = winnerCheck();
+            if (turnCount == 9 && isWinner == false) {
+                DrawCheck();
+            }
+
         }
        
         if (PlayerTurn == 0)
@@ -68,7 +85,8 @@ public class TicTacToeController : MonoBehaviour
         }
     }
 
-    void winnerCheck() {
+    bool winnerCheck() {
+
 
         int line1 = MarkedSpace[0] + MarkedSpace[1] + MarkedSpace[2];
         int line2 = MarkedSpace[3] + MarkedSpace[4] + MarkedSpace[5];
@@ -79,12 +97,26 @@ public class TicTacToeController : MonoBehaviour
         int line7 = MarkedSpace[0] + MarkedSpace[4] + MarkedSpace[8];
         int line8 = MarkedSpace[2] + MarkedSpace[4] + MarkedSpace[6];
         var solutions = new int[] { line1, line2, line3, line4, line5, line6, line7, line8 };
+        bool[] Not3 = new bool[solutions.Length]; 
         for (int i = 0; i < solutions.Length; i++) {
-            if (solutions[i] == (PlayerTurn + 1) * 3) {
+            if (solutions[i] == (PlayerTurn + 1) * 3)
+            {
                 Debug.Log("We Have a Winner: Player " + (PlayerTurn + 1) + "!");
                 DisplayWinner(i);
+                return true;
             }
+            else {
+                drawCondiLine++;
+            }           
         }
+        return false;
+    }
+
+    void DrawCheck() {
+        /*if (drawCondiSpace > 8 && drawCondiLine == 40) {
+            
+        }*/
+        DrawPanel.gameObject.SetActive(true);
     }
 
     void DisplayWinner(int LineIndex) {
@@ -93,21 +125,44 @@ public class TicTacToeController : MonoBehaviour
         if (PlayerTurn == 0)
         {
             OScore++;
+            WinPanel.gameObject.SetActive(true);
+            WinPanel.color = new Color(215, 220, 255, 255);
         }
-        else if (PlayerTurn == 1) {
-            XScore++;
+        else if (PlayerTurn == 1)
+        {
+            XScore++;           
+            WinPanel.gameObject.SetActive(true);
+            WinPanel.color = new Color(255, 215, 215, 255);
+        }       
+    }
+
+    public void SwitchPlayer(int whichPlayer) {
+        if (whichPlayer == 0)
+        {
+            PlayerTurn = 0;
+            TurnIcon[0].SetActive(true);
+            TurnIcon[1].SetActive(false);
+        }
+        else
+        {
+            PlayerTurn = 1;
+            TurnIcon[0].SetActive(false);
+            TurnIcon[1].SetActive(true);
+        }
+        for (int i = 0; i < TTTSpace.Length; i++)
+        {
+            TTTSpace[i].interactable = true;
+            //TTTSpace[i].GetComponent<Image>().sprite = null;
         }
     }
 
-    void Tie() {
-        Debug.Log("Tie");
-    }
-
-    void Rematch() {
+    public void Rematch() {
         PlayerTurn = 0;
         turnCount = 0;
         TurnIcon[0].SetActive(true);
         TurnIcon[1].SetActive(false);
+        drawCondiLine = 0;
+        drawCondiSpace = 0;
         //Turn On All TTTSpaces
         for (int i = 0; i < TTTSpace.Length; i++)
         {
@@ -124,5 +179,8 @@ public class TicTacToeController : MonoBehaviour
         {
             WinningLine[i].SetActive(false);
         }
+
+        XPlayer.interactable = true;
+        OPlayer.interactable = true;
     }
 }
