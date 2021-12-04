@@ -1137,7 +1137,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Science
+  m_Text: IPA
 --- !u!222 &253267542
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1710,7 +1710,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Maths
+  m_Text: Matematika
 --- !u!222 &376780977
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2746,7 +2746,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Coming Soon
+  m_Text: 'Kewargane-
+
+    -garaan'
 --- !u!222 &592179309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3226,7 +3228,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Study
+  m_Text: Belajar
 --- !u!222 &635130985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3434,7 +3436,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Social
+  m_Text: IPS
 --- !u!222 &654178149
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4106,7 +4108,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fruit Collector
+  m_Text: KERANJANG BUAH
 --- !u!222 &779432145
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5135,7 +5137,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Maze
+  m_Text: LABIRIN
 --- !u!222 &1049601073
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5423,7 +5425,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Coming Soon
+  m_Text: Tic Tac Toe
 --- !u!222 &1073936902
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5631,7 +5633,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Matching
+  m_Text: CARI PERSAMAAN
 --- !u!222 &1104278514
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6757,7 +6759,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Whack A Mole
+  m_Text: PUKUL TIKUS
 --- !u!222 &1312253917
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7830,7 +7832,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Language
+  m_Text: Bahasa Indonesia
 --- !u!222 &1551643094
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9130,7 +9132,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Coming soon
+  m_Text: Pengaturan
 --- !u!222 &1852796050
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9614,7 +9616,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: Bermain
 --- !u!222 &2063183886
 CanvasRenderer:
   m_ObjectHideFlags: 0

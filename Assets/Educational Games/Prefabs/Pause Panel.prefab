@@ -207,7 +207,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit
+  m_Text: Berhenti
 --- !u!1 &7349978124755188670
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +415,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option
+  m_Text: 'Pengaturan
+
+'
 --- !u!1 &7349978125586780645
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +495,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Resume
+  m_Text: Lanjut
 --- !u!1 &7349978125886851983
 GameObject:
   m_ObjectHideFlags: 0
