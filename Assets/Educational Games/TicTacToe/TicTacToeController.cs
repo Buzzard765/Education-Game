@@ -19,7 +19,11 @@ public class TicTacToeController : MonoBehaviour
     int drawCondiLine, drawCondiSpace;
 
     [SerializeField] private Image WinPanel, DrawPanel;
-    [SerializeField] private Text PanelText, XScoreText, OScoreText;
+    [SerializeField] private Text PanelText, XScoreText, OScoreText, WinOrDraw;
+
+    private AudioSource AllAudio;
+    private AudioSource BGM;
+    [SerializeField] private AudioClip SFX_X, SFX_O, SFX_Win, SFX_Draw;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +49,11 @@ public class TicTacToeController : MonoBehaviour
         {
             WinningLine[i].SetActive(false);
         }
+        AllAudio = GetComponent<AudioSource>();
+
+        BGM = GameObject.Find("BGM").GetComponent<AudioSource>();
+        WinOrDraw = GameObject.Find("WinOrDraw").GetComponent<Text>();
+        WinOrDraw.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -67,6 +76,8 @@ public class TicTacToeController : MonoBehaviour
         {
             bool isWinner = winnerCheck();
             if (turnCount == 9 && isWinner == false) {
+                BGM.Stop();
+                AllAudio.PlayOneShot(SFX_Draw);
                 DrawCheck();
             }
 
@@ -74,11 +85,13 @@ public class TicTacToeController : MonoBehaviour
        
         if (PlayerTurn == 0)
         {
+            AllAudio.PlayOneShot(SFX_O);
             PlayerTurn = 1;
             TurnIcon[0].SetActive(false);
             TurnIcon[1].SetActive(true);
         }
         else {
+            AllAudio.PlayOneShot(SFX_X);
             PlayerTurn = 0;
             TurnIcon[0].SetActive(true);
             TurnIcon[1].SetActive(false);
@@ -86,8 +99,7 @@ public class TicTacToeController : MonoBehaviour
     }
 
     bool winnerCheck() {
-
-
+        
         int line1 = MarkedSpace[0] + MarkedSpace[1] + MarkedSpace[2];
         int line2 = MarkedSpace[3] + MarkedSpace[4] + MarkedSpace[5];
         int line3 = MarkedSpace[6] + MarkedSpace[7] + MarkedSpace[8];
@@ -101,7 +113,11 @@ public class TicTacToeController : MonoBehaviour
         for (int i = 0; i < solutions.Length; i++) {
             if (solutions[i] == (PlayerTurn + 1) * 3)
             {
+                BGM.Stop();
+                AllAudio.PlayOneShot(SFX_Win);
                 Debug.Log("We Have a Winner: Player " + (PlayerTurn + 1) + "!");
+                WinOrDraw.text = "We Have a Winner: Player " + (PlayerTurn + 1) + "!";
+                WinOrDraw.gameObject.SetActive(true);
                 DisplayWinner(i);
                 return true;
             }
@@ -117,6 +133,8 @@ public class TicTacToeController : MonoBehaviour
             
         }*/
         DrawPanel.gameObject.SetActive(true);
+        WinOrDraw.text = "It's a tie...";
+        WinOrDraw.gameObject.SetActive(true);
     }
 
     void DisplayWinner(int LineIndex) {
@@ -157,6 +175,7 @@ public class TicTacToeController : MonoBehaviour
     }
 
     public void Rematch() {
+        BGM.Play();
         PlayerTurn = 0;
         turnCount = 0;
         TurnIcon[0].SetActive(true);

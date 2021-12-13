@@ -16,12 +16,20 @@ public class GameController : MonoBehaviour
     private string firstPairName, secondPairName;
 
     private int firstPairIndex, secondPairIndex;
+    private AudioSource allAudio;
+
+    [SerializeField] AudioClip SFX_Wrong, SFX_Right;
+
+    private GameObject WinPanel;
 
     // Start is called before the first frame update
     // 
     private void Awake()
     {
         pictures = Resources.LoadAll<Sprite>("Sprites/"+ spriteName);
+        allAudio = GetComponent<AudioSource>();
+        WinPanel = GameObject.Find("Victory");
+        WinPanel.SetActive(false);
     }
     void Start()
     {
@@ -103,12 +111,14 @@ public class GameController : MonoBehaviour
             bttnList[firstPairIndex].image.color = new Color(0, 0, 0, 0);
             bttnList[secondPairIndex].image.color = new Color(0, 0, 0, 0);
             Debug.Log("Perfect Match");
+            allAudio.PlayOneShot(SFX_Right);
             LimitCheck();
         }
         else
         {
             bttnList[firstPairIndex].image.sprite = Background;
             bttnList[secondPairIndex].image.sprite = Background;
+            allAudio.PlayOneShot(SFX_Wrong);
             Debug.Log("Didn't Match");
         }
         yield return new WaitForSeconds(.5f);
@@ -119,6 +129,7 @@ public class GameController : MonoBehaviour
     void LimitCheck() {
         CorrectPair++;
         if (CorrectPair == PairLimit) {
+            WinPanel.SetActive(true);
             Debug.Log("Game Cleared");
             Debug.Log("you've made" + Guesses + "guesses to finish");
         }

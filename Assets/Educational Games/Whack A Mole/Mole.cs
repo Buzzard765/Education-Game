@@ -9,12 +9,15 @@ public class Mole : MonoBehaviour
     private float UnderGround;
     public float minTime, maxTime;
     private Animator animator;
+
+    private AudioSource AllAudio;
+    [SerializeField] AudioClip SFX_Despawn, SFX_Knock;
     // Start is called before the first frame update
     void Start()
     {
         OutGroundTime = Random.Range(minTime, maxTime);
         animator = GetComponent<Animator>();
-        
+        AllAudio = GetComponentInChildren<AudioSource>();
     }
 
     // Update is called once per frame
@@ -52,6 +55,7 @@ public class Mole : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) {
             Debug.Log("Gotcha");
+            AllAudio.PlayOneShot(SFX_Knock);
             StartCoroutine(KnockOut());
             FindObjectOfType<MoleSpawning>().score_get += 1;
             FindObjectOfType<MoleSpawning>().time_get += 3;
@@ -59,7 +63,7 @@ public class Mole : MonoBehaviour
     }
 
     IEnumerator KnockOut() {
-        animator.SetFloat("state", 2);
+        animator.SetFloat("state", 2);      
         yield return new WaitForSeconds(4.5f);
         animator.SetFloat("state", 0);
         DeSpawn();

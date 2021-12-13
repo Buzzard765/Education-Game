@@ -28,6 +28,11 @@ public class MainMenuScript : AllUIButtons
 
     public void loadlevel(string levelname)
     {
-        SceneManager.LoadScene(levelname);
+        StartCoroutine(LoadLevel(levelname));
+    }
+
+    IEnumerator LoadLevel(string name) {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadSceneAsync(name);
     }
 }
