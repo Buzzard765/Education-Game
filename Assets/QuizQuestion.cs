@@ -24,9 +24,13 @@ public class QuizQuestion : MonoBehaviour
 
     public List<ImgQuestion> QuestionList = new List<ImgQuestion>();
     private int index;
+
+    private AudioSource allAudio;
+    [SerializeField] AudioClip SFX_Wrong, SFX_Correct;
     // Start is called before the first frame update
     void Start()
     {
+        allAudio = GetComponent<AudioSource>();
         try
         {
             gambarSoal = GameObject.Find("Question Image").GetComponent<Image>();
@@ -76,15 +80,18 @@ public class QuizQuestion : MonoBehaviour
     public void AnswerCheck(int answer) {
         if (QuestionList[index].answerIndex == answer)
         {
-            nextRandomQuestion();
+            allAudio.PlayOneShot(SFX_Correct);
+            StartCoroutine(nextRandomQuestion());           
         }
         else {
             Debug.Log("Wrong Answer");
+            allAudio.PlayOneShot(SFX_Wrong);
         }
     }
 
-    public void nextRandomQuestion()
-    {
+    IEnumerator nextRandomQuestion()
+    {       
+        yield return new WaitForSeconds(0);
         QuestionList.RemoveAt(index);
         index = Random.Range(0, QuestionList.Count);
     }
