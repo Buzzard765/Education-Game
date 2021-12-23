@@ -20,23 +20,24 @@ public class FindObjectCase : MonoBehaviour
     private Text questiontext;
     private Text[] answerText = new Text[4];
     private GameObject Victory;
+    [SerializeField] Button[] AnswerChoices;
 
     private int index, randomCase;
 
-    //private AudioSource allAudio;
-    //[SerializeField] AudioClip SFX_Wrong, SFX_Correct;
+    private AudioSource allAudio;
+    [SerializeField] AudioClip SFX_Wrong, SFX_Correct;
     // Start is called before the first frame update
     void Start()
-    {        
+    {
+        allAudio = GetComponent<AudioSource>();
         //gambarSoal = GameObject.Find("Question Image").GetComponent<Image>();
-        questiontext = GameObject.Find("Question").GetComponent<Text>();
-        answerText[0] = GameObject.Find("A").GetComponent<Text>();
-        answerText[1] = GameObject.Find("B").GetComponent<Text>();
-        answerText[2] = GameObject.Find("C").GetComponent<Text>();
-        answerText[3] = GameObject.Find("D").GetComponent<Text>();
-        gambarSoal = Scenery;
+        questiontext = GameObject.Find("Question").GetComponent<Text>();       
+        //gambarSoal = Scenery;
 
         index = Random.Range(0, QuestionList.Count);
+
+        Victory = GameObject.Find("Victory");
+        Victory.SetActive(false);
     }
 
     // Update is called once per frame
@@ -59,20 +60,30 @@ public class FindObjectCase : MonoBehaviour
     {
         if (QuestionList[index].answerIndex == answer)
         {
-            //allAudio.PlayOneShot(SFX_Correct);
+            allAudio.PlayOneShot(SFX_Correct);
             StartCoroutine(nextRandomQuestion());
         }
         else
         {
             Debug.Log("Wrong Answer");
-            //allAudio.PlayOneShot(SFX_Wrong);
+            allAudio.PlayOneShot(SFX_Wrong);
         }
     }
 
     IEnumerator nextRandomQuestion()
     {
-        yield return new WaitForSeconds(0);
+        questiontext.gameObject.SetActive(false);
+        ButtonTransition(false);
+        yield return new WaitForSeconds(2);
+        questiontext.gameObject.SetActive(true);
+        ButtonTransition(true);
         QuestionList.RemoveAt(index);
         index = Random.Range(0, QuestionList.Count);
+    }
+
+    void ButtonTransition(bool setActive) {
+        for (int i = 0; i < AnswerChoices.Length; i++) {
+             AnswerChoices[i].gameObject.SetActive(setActive);
+        }
     }
 }
