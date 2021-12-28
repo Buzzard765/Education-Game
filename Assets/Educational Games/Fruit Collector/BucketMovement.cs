@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityStandardAssets.CrossPlatformInput;
 public class BucketMovement : MonoBehaviour
 {
 
@@ -9,8 +9,11 @@ public class BucketMovement : MonoBehaviour
     private BoxCollider2D bucketCollider;
     [SerializeField]
     private float speed;
-    
+    float direction;
+    bool flip;
 
+    AudioSource allAudio;
+    AudioClip TroupeSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +25,13 @@ public class BucketMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {       
-        Movement();
+    {
+        direction = CrossPlatformInputManager.GetAxis("Horizontal") * speed;
+        OneWayMovement();
     }
     private void LateUpdate()
     {
-        
+        Flip();        
     }
 
     void Movement() {
@@ -52,11 +56,38 @@ public class BucketMovement : MonoBehaviour
         Debug.Log(bucketRB.velocity);
     }
 
-    public void OneWayMovement(float click) {
-        bucketRB.velocity += new Vector2(click, 0);
+    private void FixedUpdate()
+    {
+        
     }
-    public void Flip(float rotation) {
-        transform.rotation = Quaternion.Euler(0, rotation, 0);
+
+    public void OneWayMovement() {
+        bucketRB.velocity = new Vector2(direction * speed, bucketRB.velocity.y);
+        int rotation = (int)direction;
+        allAudio.PlayOneShot(TroupeSFX);
+        //bucketRB.MovePosition(bucketRB.position + direction * speed * Time.deltaTime);
+    }
+    public void Flip() {
+        if (direction >= 1)
+        {
+            flip = false;
+        }
+        else
+        {
+
+            if (direction <= -1)
+            {
+                flip = true;
+            }
+        }
+        if (flip == true)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
