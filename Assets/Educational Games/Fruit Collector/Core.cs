@@ -12,6 +12,8 @@ public class Core : MonoBehaviour
     public Text TimeText, ScoreText, HighscoreText;
     private GameObject Panel;
     public bool onPlay = true;
+    AudioSource BGM;
+    [SerializeField] AudioClip LevelBGM, ClearBGM;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +25,15 @@ public class Core : MonoBehaviour
         ScoreText = GameObject.Find("Score").GetComponent<Text>();
         highscore = PlayerPrefs.GetInt("highscore", highscore) ;
         Panel.SetActive(false);
+        BGM = GetComponent<AudioSource>();
+        BGM.loop = true;
+        BGM.PlayOneShot(LevelBGM);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         TimeLimit -= 1* Time.deltaTime;
         TimeText.text = TimeLimit.ToString("0");
         if (TimeLimit <= 0) {
@@ -39,6 +45,8 @@ public class Core : MonoBehaviour
         if (TimeLimit <= 0)
         {
             onPlay = false;
+            BGM.loop = false;
+            BGM.PlayOneShot(ClearBGM);
             rewriteScore();
         }
     }

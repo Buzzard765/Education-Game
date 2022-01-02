@@ -1931,8 +1931,14 @@ MonoBehaviour:
     - content: SERBA
     - content: LONG
     answerIndex: 2
+  AnswerChoices:
+  - {fileID: 2085455764}
+  - {fileID: 917039113}
+  - {fileID: 1870954412}
+  - {fileID: 606359111}
   SFX_Wrong: {fileID: 8300000, guid: f5241435a5e66294982f292240c716c5, type: 3}
   SFX_Correct: {fileID: 8300000, guid: 5d54696fe3657a843ae592970e7e6a77, type: 3}
+  SFX_Clear: {fileID: 0}
 --- !u!1 &1870954410
 GameObject:
   m_ObjectHideFlags: 0

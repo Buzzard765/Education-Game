@@ -64,7 +64,7 @@ public class BucketMovement : MonoBehaviour
     public void OneWayMovement() {
         bucketRB.velocity = new Vector2(direction * speed, bucketRB.velocity.y);
         int rotation = (int)direction;
-        allAudio.PlayOneShot(TroupeSFX);
+        //allAudio.PlayOneShot(TroupeSFX);
         //bucketRB.MovePosition(bucketRB.position + direction * speed * Time.deltaTime);
     }
     public void Flip() {
