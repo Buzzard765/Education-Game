@@ -485,13 +485,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   highscore: 0
-  TimeLimit: 60
+  TimeLimit: 15
   TimeText: {fileID: 0}
   ScoreText: {fileID: 0}
   HighscoreText: {fileID: 0}
   onPlay: 1
-  LevelBGM: {fileID: 8300000, guid: 1b8d418511ae6a14abb4823f53a9197d, type: 3}
-  ClearBGM: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
 --- !u!4 &503778433
 Transform:
   m_ObjectHideFlags: 0
@@ -2363,7 +2361,7 @@ Animator:
   m_GameObject: {fileID: 1889553317}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e67373a3fd8dbe5409e18db6976e279c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2890,3 +2888,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124467189}
   m_CullTransparentMesh: 0
+--- !u!4 &7806089033626356892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7806089033626356894}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1465.5, y: 471.43, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7806089033626356894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7806089033626356892}
+  - component: {fileID: 7806089033626356895}
+  m_Layer: 0
+  m_Name: BGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &7806089033626356895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7806089033626356894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e14af237524097469871a80d1c4adb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM:
+  - name: Level Music
+    clip: {fileID: 8300000, guid: 1b8d418511ae6a14abb4823f53a9197d, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 1
+    source: {fileID: 0}
+  - name: Stage Clear
+    clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    source: {fileID: 0}
+  - name: Stage Failed
+    clip: {fileID: 8300000, guid: 79272512a188f914fb15a613c68d6ae7, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    source: {fileID: 0}
+  SFX:
+  - name: Fruit
+    clip: {fileID: 8300000, guid: 272cdd233011b774da5e32154e21e093, type: 3}
+    volume: 0
+    pitch: 0
+    Loop: 0
+    source: {fileID: 0}
+  - name: Trash
+    clip: {fileID: 8300000, guid: df87da67983e75e40a2a5659bcb5794d, type: 3}
+    volume: 0
+    pitch: 0
+    Loop: 0
+    source: {fileID: 0}

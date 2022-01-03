@@ -31,9 +31,10 @@ public class QuizQuestion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //allAudio = GetComponent<AudioSource>();
+        allAudio = GetComponent<AudioSource>();
         //BGM = GameObject.Find("BGM").GetComponent<AudioSource>();
         FindObjectOfType<AudioManager>().PlayMusic("Level Music");
+
         try
         {
             gambarSoal = GameObject.Find("Question Image").GetComponent<Image>();
@@ -41,7 +42,8 @@ public class QuizQuestion : MonoBehaviour
         catch
         {
             Debug.Log("Proceeding Without Image");
-        }      
+        }
+        
         questiontext = GameObject.Find("Question").GetComponent<Text>();
         answerText[0] = GameObject.Find("A").GetComponent<Text>();
         answerText[1] = GameObject.Find("B").GetComponent<Text>();
@@ -56,6 +58,7 @@ public class QuizQuestion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //FindObjectOfType<AudioManager>().PlayMusic("Level Music");
         if (QuestionList.Count > 0)
         {
             questiontext.text = QuestionList[index].QuestionContent;
@@ -71,62 +74,50 @@ public class QuizQuestion : MonoBehaviour
         }
         else
         {
-
-            //currentLimit = 0;
-
-            //BGM.clip = SFX_Clear;
-            /*if (BGM.isPlaying == true) {
-                BGM.Stop();
-            }      */     
-            Clear();
-            //timeText.gameObject.SetActive(false);
-            Debug.Log("Quiz Over");
+            Victory.SetActive(true);          
         }
         
     }
 
-    
 
     public void AnswerCheck(int answer) {
         if (QuestionList[index].answerIndex == answer)
         {
             allAudio.PlayOneShot(SFX_Correct);
-            StartCoroutine(nextRandomQuestion());           
+            StartCoroutine(ButtonTransition(0.5f));
+            
         }
         else {
             Debug.Log("Wrong Answer");
             allAudio.PlayOneShot(SFX_Wrong);
-        }
-    }
-    void Clear() {
-        Victory.SetActive(true);      
-        BGM.clip = SFX_Clear;
-        if (BGM.isPlaying == false)
-        {
-            BGM.Play();
         }       
-    }
+    }    
         
-    IEnumerator nextRandomQuestion()
-    {       
-        /*yield return new WaitForSeconds(0);
-        QuestionList.RemoveAt(index);
-        index = Random.Range(0, QuestionList.Count);*/
-
-        
-        ButtonTransition(false);
-        yield return new WaitForSeconds(0.5f);
-       
-        ButtonTransition(true);
-        QuestionList.RemoveAt(index);
+    void nextRandomQuestion()
+    {                      
+        if (QuestionList.Count > 0)
+        {
+            QuestionList.RemoveAt(index);
+            if (QuestionList.Count <= 0) {
+                Debug.Log("Quiz Over");
+                FindObjectOfType<AudioManager>().StopMusic("Level Music");
+                FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
+            }
+        }         
         index = Random.Range(0, QuestionList.Count);
     }
 
-    void ButtonTransition(bool setActive)
+    IEnumerator ButtonTransition(float delay)
     {
         for (int i = 0; i < AnswerChoices.Length; i++)
         {
-            AnswerChoices[i].interactable = setActive;
+            AnswerChoices[i].interactable = false;
         }
+        yield return new WaitForSeconds(delay);
+        for (int i = 0; i < AnswerChoices.Length; i++)
+        {
+            AnswerChoices[i].interactable = true    ;
+        }
+        nextRandomQuestion();
     }
 }

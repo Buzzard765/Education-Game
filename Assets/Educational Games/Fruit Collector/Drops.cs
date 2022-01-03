@@ -10,15 +10,12 @@ public class Drops : MonoBehaviour
     public int points, minValue, maxValue;
     public Core GameManager;
 
-    AudioSource AllAudio;
-    [SerializeField]AudioClip FruitSFX, TrashSFX, WasteSFX;
 
     // Start is called before the first frame update
 
     private void Awake()
     {
-        GameManager = GameObject.Find("GameManager").GetComponent<Core>();
-        AllAudio = GetComponent<AudioSource>();
+        GameManager = GameObject.Find("GameManager").GetComponent<Core>();        
     }
 
     void Start()
@@ -33,6 +30,9 @@ public class Drops : MonoBehaviour
     void Update()
     {
         transform.Rotate(0,0,spin);
+        if (GameManager.TimeLimit <= 0) {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -51,16 +51,15 @@ public class Drops : MonoBehaviour
                 Destroy(gameObject);
                 GameManager.score += points;
                 GameManager.TimeLimit += points;
-                AllAudio.PlayOneShot(FruitSFX);
+                FindObjectOfType<AudioManager>().PlaySound("Fruit");
             }
             else if (gameObject.CompareTag("Trash"))
             {
                 Debug.Log("trash Colletcted");
                 Destroy(gameObject);
-                GameManager.score -= points;
-                AllAudio.PlayOneShot(TrashSFX);
-            }
-            
+                GameManager.score -= points;               
+                FindObjectOfType<AudioManager>().PlaySound("Trash");
+            }           
         }
 
         if (GameManager.onPlay == false) {
