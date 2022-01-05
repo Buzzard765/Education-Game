@@ -30,6 +30,7 @@ public class FindObjectCase : MonoBehaviour
     void Start()
     {
         allAudio = GetComponent<AudioSource>();
+        FindObjectOfType<AudioManager>().PlayMusic("Level Music");
         //gambarSoal = GameObject.Find("Question Image").GetComponent<Image>();
         questiontext = GameObject.Find("Question").GetComponent<Text>();       
         //gambarSoal = Scenery;
@@ -61,7 +62,7 @@ public class FindObjectCase : MonoBehaviour
         if (QuestionList[index].answerIndex == answer)
         {
             allAudio.PlayOneShot(SFX_Correct);
-            StartCoroutine(nextRandomQuestion());
+            StartCoroutine(ButtonTransition(2f));
         }
         else
         {
@@ -70,20 +71,34 @@ public class FindObjectCase : MonoBehaviour
         }
     }
 
-    IEnumerator nextRandomQuestion()
+    void nextRandomQuestion()
+    {
+        if (QuestionList.Count > 0)
+        {
+            QuestionList.RemoveAt(index);
+            if (QuestionList.Count <= 0)
+            {
+                Debug.Log("Quiz Over");
+                FindObjectOfType<AudioManager>().StopMusic("Level Music");
+                FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
+            }
+        }
+        index = Random.Range(0, QuestionList.Count);
+    }   
+
+    IEnumerator ButtonTransition(float delay)
     {
         questiontext.gameObject.SetActive(false);
-        ButtonTransition(false);
-        yield return new WaitForSeconds(2);
-        questiontext.gameObject.SetActive(true);
-        ButtonTransition(true);
-        QuestionList.RemoveAt(index);
-        index = Random.Range(0, QuestionList.Count);
-    }
-
-    void ButtonTransition(bool setActive) {
-        for (int i = 0; i < AnswerChoices.Length; i++) {
-             AnswerChoices[i].gameObject.SetActive(setActive);
+        for (int i = 0; i < AnswerChoices.Length; i++)
+        {
+            AnswerChoices[i].interactable = false;
         }
+        yield return new WaitForSeconds(delay);
+        questiontext.gameObject.SetActive(true);
+        for (int i = 0; i < AnswerChoices.Length; i++)
+        {
+            AnswerChoices[i].interactable = true;
+        }
+        nextRandomQuestion();
     }
 }

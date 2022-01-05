@@ -11,6 +11,7 @@ public class BucketMovement : MonoBehaviour
     private float speed;
     float direction;
     bool flip;
+    Animator allAni;
 
     AudioSource allAudio;
     AudioClip TroupeSFX;
@@ -18,7 +19,7 @@ public class BucketMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        allAni = GetComponent<Animator>();
         bucketRB = GetComponent<Rigidbody2D>();
         bucketCollider = GameObject.Find("Bucket").GetComponent<BoxCollider2D>();
     }
@@ -27,7 +28,9 @@ public class BucketMovement : MonoBehaviour
     void Update()
     {
         direction = CrossPlatformInputManager.GetAxis("Horizontal") * speed;
+        Movement();
         OneWayMovement();
+        allAni.SetFloat("Speed", 0);
     }
     private void LateUpdate()
     {
@@ -36,8 +39,6 @@ public class BucketMovement : MonoBehaviour
 
     void Movement() {
 
-        
-
         bucketRB.velocity = Vector2.zero;
 
         if (Input.GetKey(KeyCode.RightArrow))
@@ -45,6 +46,7 @@ public class BucketMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
             //transform.position += new Vector3(speed, 0);
             bucketRB.velocity += new Vector2(speed, 0);
+            allAni.SetFloat("Speed", 2);
             Debug.Log(bucketRB.velocity);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -52,6 +54,7 @@ public class BucketMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
             // transform.position += new Vector3(-speed, 0);
             bucketRB.velocity += new Vector2(-speed, 0);
+            allAni.SetFloat("Speed", 2);
         }
         Debug.Log(bucketRB.velocity);
     }
@@ -64,6 +67,7 @@ public class BucketMovement : MonoBehaviour
     public void OneWayMovement() {
         bucketRB.velocity = new Vector2(direction * speed, bucketRB.velocity.y);
         int rotation = (int)direction;
+        allAni.SetFloat("Speed", 2);
         //allAudio.PlayOneShot(TroupeSFX);
         //bucketRB.MovePosition(bucketRB.position + direction * speed * Time.deltaTime);
     }

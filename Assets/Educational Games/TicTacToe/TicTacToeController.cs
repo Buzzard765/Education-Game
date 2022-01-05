@@ -28,6 +28,8 @@ public class TicTacToeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<AudioManager>().PlayMusic("Level Music");
+
         XScore = OScore = 0;
         //PlayerTurn = 0;
         turnCount = 0;
@@ -138,7 +140,10 @@ public class TicTacToeController : MonoBehaviour
     }
 
     void DisplayWinner(int LineIndex) {
-        
+
+        FindObjectOfType<AudioManager>().StopMusic("Level Music");
+        FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
+
         WinningLine[LineIndex].SetActive(true);
         if (PlayerTurn == 0)
         {
@@ -175,6 +180,7 @@ public class TicTacToeController : MonoBehaviour
     }
 
     public void Rematch() {
+        FindObjectOfType<AudioManager>().PlayMusic("Level Music");
         BGM.Play();
         PlayerTurn = 0;
         turnCount = 0;

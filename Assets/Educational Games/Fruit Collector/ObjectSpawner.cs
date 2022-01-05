@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Manager;
 public class ObjectSpawner : MonoBehaviour
 {
     public GameObject fruits, trash;

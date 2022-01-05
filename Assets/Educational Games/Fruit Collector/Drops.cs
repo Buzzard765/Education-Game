@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Manager;
+using Utility;
 
 public class Drops : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class Drops : MonoBehaviour
     public float spin;
     public int points, minValue, maxValue;
     public Core GameManager;
+
 
 
     // Start is called before the first frame update
@@ -30,7 +33,7 @@ public class Drops : MonoBehaviour
     void Update()
     {
         transform.Rotate(0,0,spin);
-        if (GameManager.TimeLimit <= 0) {
+        if (GameManager.onPlay == false) {
             Destroy(gameObject);
         }
     }
@@ -50,7 +53,7 @@ public class Drops : MonoBehaviour
                 Debug.Log("fruit Colletcted");
                 Destroy(gameObject);
                 GameManager.score += points;
-                GameManager.TimeLimit += points;
+                FindObjectOfType<Timer>().Add(points);
                 FindObjectOfType<AudioManager>().PlaySound("Fruit");
             }
             else if (gameObject.CompareTag("Trash"))

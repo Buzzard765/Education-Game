@@ -1,62 +1,64 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
 
-public class Core : MonoBehaviour
-{
-
-    private BucketMovement Player;
-    public int score, highscore;
-    public float TimeLimit;
-    public Text TimeText, ScoreText, HighscoreText;
-    private GameObject Panel;
-    public bool onPlay = true;   
-    // Start is called before the first frame update
-    void Start()
+namespace Manager {
+    public class Core : MonoBehaviour
     {
-        FindObjectOfType<AudioManager>().PlayMusic("Level Music");
-        TimeLimit.ToString("F0");
-        Panel = GameObject.Find("Panel");
-        HighscoreText = GameObject.Find("Highscore").GetComponent<Text>();
-        TimeText = GameObject.Find("Timer").GetComponent<Text>();
-        ScoreText = GameObject.Find("Score").GetComponent<Text>();
-        highscore = PlayerPrefs.GetInt("highscore", highscore) ;
-        Panel.SetActive(false);       
-    }
+        [SerializeField]private Timer timer;
+        public float limit;
+        private BucketMovement Player;
+        public int score, highscore;
 
-    // Update is called once per frame
-    void Update()
-    {       
-        TimeLimit -= 1* Time.deltaTime;
-        TimeText.text = TimeLimit.ToString("0");
-        if (TimeLimit <= 0) {
-            TimeLimit = 0;
-            TimeText.text = ("Time's Up!").ToString();
-        }
-        ScoreText.text = "Score: " + score.ToString();
-
-        if (TimeLimit <= 0)
+        public Text TimeText, ScoreText, HighscoreText;
+        [SerializeField]private GameObject Panel;
+        public bool onPlay = true;
+        private void OnEnable()
         {
-            onPlay = false;          
-            rewriteScore();
+            timer.onTimerExpired += rewriteScore;
         }
+        private void OnDisable()
+        {
+            timer.onTimerExpired -= rewriteScore;
+        }
+        private void rewriteScore()
+        {
+            onPlay = false;
+            FindObjectOfType<AudioManager>().StopMusic("Level Music");
+            Panel.SetActive(true);
+            if (score > highscore)
+            {
+                highscore = score;
+                PlayerPrefs.SetInt("highscore", score);
+                FindObjectOfType<AudioManager>().PlayMusic("Stage Cleared");
+                HighscoreText.text = "New Highscore!\n" + highscore.ToString();
+            }
+            else
+            {
+                FindObjectOfType<AudioManager>().PlayMusic("Stage Failed");
+                HighscoreText.text = "Highscore:\n" + highscore.ToString();
+            }
+        }
+        // Start is called before the first frame update
+        void Start()
+        {
+            
+            timer.startTimer(limit);
+            FindObjectOfType<AudioManager>().PlayMusic("Level Music");         
+            Panel.SetActive(false);
+        }
+        
+        // Update is called once per frame
+        void Update()
+        {
+
+
+        }
+
+       
     }
 
-    void rewriteScore()
-    {
-        FindObjectOfType<AudioManager>().StopMusic("Level Music");       
-        Panel.SetActive(true);
-        if (score > highscore)
-        {
-            highscore = score;
-            PlayerPrefs.SetInt("highscore", score);
-            FindObjectOfType<AudioManager>().PlayMusic("Stage Cleared");
-            HighscoreText.text = "New Highscore!\n" + highscore.ToString();
-        }
-        else {
-            FindObjectOfType<AudioManager>().PlayMusic("Stage Failed");
-            HighscoreText.text = "Highscore:\n" + highscore.ToString();
-        }
-    }
 }

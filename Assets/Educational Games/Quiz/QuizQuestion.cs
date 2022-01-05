@@ -84,7 +84,7 @@ public class QuizQuestion : MonoBehaviour
         if (QuestionList[index].answerIndex == answer)
         {
             allAudio.PlayOneShot(SFX_Correct);
-            StartCoroutine(ButtonTransition(0.5f));
+            StartCoroutine(ButtonTransition(2f));
             
         }
         else {
@@ -101,7 +101,7 @@ public class QuizQuestion : MonoBehaviour
             if (QuestionList.Count <= 0) {
                 Debug.Log("Quiz Over");
                 FindObjectOfType<AudioManager>().StopMusic("Level Music");
-                FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
+                FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");  
             }
         }         
         index = Random.Range(0, QuestionList.Count);
