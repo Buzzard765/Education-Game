@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
 
 public class MoleSpawning : MonoBehaviour
 {
+    [SerializeField] private Timer timer;
+
     [System.Serializable] public class MoleHole {
         public Transform hole;
         public bool hasMole;
@@ -32,6 +35,15 @@ public class MoleSpawning : MonoBehaviour
         set { score = value; }
     }
 
+    private void OnEnable()
+    {
+        timer.onTimerExpired += Result;
+    }
+    private void OnDisable()
+    {
+        timer.onTimerExpired -= Result;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,14 +59,11 @@ public class MoleSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time < 0)
-        {
-            StartCoroutine(Result());
-        }
-        else {
+
+        if (timer.TimeLimit > 0){
             RandomizeSpawn();
-            time -= Time.deltaTime;
         }
+            
 
         TimeText.text =  time.ToString("F0");
         ScoreText.text =   score.ToString();
@@ -81,8 +90,19 @@ public class MoleSpawning : MonoBehaviour
         AllHoles[index].SetActive(true);
     }
 
-    IEnumerator Result(){
-        yield return new WaitForSeconds(1);
+    void Result(){
+
+        StartCoroutine(ResultBGMs());
         Panel.SetActive(true);
     }
+
+    IEnumerator ResultBGMs() {
+
+        FindObjectOfType<AudioManager>().PlayMusic("");
+        yield return new WaitForSeconds(2f);
+        FindObjectOfType<AudioManager>().PlayMusic("");
+
+    }
+
+
 }
