@@ -24,6 +24,23 @@ namespace Manager {
         {
             timer.onTimerExpired -= rewriteScore;
         }
+        
+        // Start is called before the first frame update
+        void Start()
+        {
+            
+            timer.startTimer(limit);
+            FindObjectOfType<AudioManager>().PlayMusic("Level Music");         
+            Panel.SetActive(false);
+        }
+        
+        // Update is called once per frame
+        void Update()
+        {
+
+
+        }
+
         private void rewriteScore()
         {
             onPlay = false;
@@ -42,23 +59,6 @@ namespace Manager {
                 HighscoreText.text = "Highscore:\n" + highscore.ToString();
             }
         }
-        // Start is called before the first frame update
-        void Start()
-        {
-            
-            timer.startTimer(limit);
-            FindObjectOfType<AudioManager>().PlayMusic("Level Music");         
-            Panel.SetActive(false);
-        }
-        
-        // Update is called once per frame
-        void Update()
-        {
-
-
-        }
-
-       
     }
 
 }

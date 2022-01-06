@@ -13,21 +13,22 @@ public class MoleSpawning : MonoBehaviour
         public bool hasMole;
     }
 
-    public GameObject Mole;
+    //public GameObject Mole;
     //public Transform[] hole;
     //public bool hasMole;
     public List<GameObject> AllHoles = new List<GameObject>();
     public float spawnRate;
     private float currentspawnRate;
     private int randomSpot;
+
     [SerializeField] private int score;
-    [SerializeField] private float time;
+    [SerializeField] private float timeLimit;
     [SerializeField] GameObject Panel;
-    [SerializeField] Text ScoreText, TimeText;
+    [SerializeField] Text ScoreText, TimeText, ResultText;
 
     public float time_get {
-        get { return time; }
-        set { time = value; }
+        get { return timeLimit; }
+        set { timeLimit = value; }
     }
     public int score_get
     {
@@ -47,12 +48,14 @@ public class MoleSpawning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<AudioManager>().PlayMusic("Level Music");
         currentspawnRate = spawnRate;
         randomSpot = Random.Range(0, AllHoles.Count);
         foreach (GameObject holes in AllHoles) {
             holes.SetActive(false);
         }
-
+        timer.startTimer(timeLimit);
+        Panel.SetActive(false);
         //TimeText = GameObject.Find("Time").GetComponent<Text>();
     }
 
@@ -60,12 +63,12 @@ public class MoleSpawning : MonoBehaviour
     void Update()
     {
 
-        if (timer.TimeLimit > 0){
+        if (timer.Limit > 0){
             RandomizeSpawn();
         }
             
 
-        TimeText.text =  time.ToString("F0");
+        TimeText.text = timeLimit.ToString("F0");
         ScoreText.text =   score.ToString();
     }
 
@@ -93,14 +96,17 @@ public class MoleSpawning : MonoBehaviour
     void Result(){
 
         StartCoroutine(ResultBGMs());
-        Panel.SetActive(true);
+        
     }
 
     IEnumerator ResultBGMs() {
 
-        FindObjectOfType<AudioManager>().PlayMusic("");
+        FindObjectOfType<AudioManager>().StopMusic("Level Music");
+        //FindObjectOfType<AudioManager>().PlayMusic("Whistle");
         yield return new WaitForSeconds(2f);
-        FindObjectOfType<AudioManager>().PlayMusic("");
+        Panel.SetActive(true);
+        ResultText.text = "Skor yang didapat: \n" + score;
+        FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
 
     }
 

@@ -18,10 +18,13 @@ public class Movement : MonoBehaviour
     public Joystick js;
     public int speed;
 
+    [SerializeField]private GameObject Panel_Win, Panel_Lose;
+
     private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<AudioManager>().PlayMusic("Level Music");
         rb2d = GetComponent<Rigidbody2D>();
         js = FindObjectOfType<Joystick>();
         animator = GetComponent<Animator>();
@@ -57,7 +60,9 @@ public class Movement : MonoBehaviour
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Wrong")) {
-            lose = true;
+            Panel_Lose.SetActive(true);
+            FindObjectOfType<AudioManager>().StopMusic("Level Music");
+            FindObjectOfType<AudioManager>().PlayMusic("Stage Failed");
         }
         if(collision.gameObject.name.Contains("Gate") && hasKey != 0) {
             hasKey --;
@@ -69,7 +74,9 @@ public class Movement : MonoBehaviour
     {
         if(collision.gameObject.name.Contains("Goal")) {
             Debug.Log("Cleared");
-            cleared = true;            
+            FindObjectOfType<AudioManager>().StopMusic("Level Music");
+            FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
+            Panel_Win.SetActive(true);
         }
     }
 }

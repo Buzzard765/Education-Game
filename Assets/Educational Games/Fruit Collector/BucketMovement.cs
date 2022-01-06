@@ -28,9 +28,10 @@ public class BucketMovement : MonoBehaviour
     void Update()
     {
         direction = CrossPlatformInputManager.GetAxis("Horizontal") * speed;
+        
         Movement();
         OneWayMovement();
-        allAni.SetFloat("Speed", 0);
+        //allAni.SetFloat("Speed", 0);
     }
     private void LateUpdate()
     {
@@ -68,8 +69,10 @@ public class BucketMovement : MonoBehaviour
         bucketRB.velocity = new Vector2(direction * speed, bucketRB.velocity.y);
         int rotation = (int)direction;
         allAni.SetFloat("Speed", 2);
-        //allAudio.PlayOneShot(TroupeSFX);
-        //bucketRB.MovePosition(bucketRB.position + direction * speed * Time.deltaTime);
+        if (direction == 0)
+        {
+            allAni.SetFloat("Speed", 0);
+        }
     }
     public void Flip() {
         if (direction >= 1)

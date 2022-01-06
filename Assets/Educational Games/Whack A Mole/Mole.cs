@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using Utility;
 public class Mole : MonoBehaviour
 {
     private float OutGroundTime;
@@ -58,7 +58,7 @@ public class Mole : MonoBehaviour
             AllAudio.PlayOneShot(SFX_Knock);
             StartCoroutine(KnockOut());
             FindObjectOfType<MoleSpawning>().score_get += 1;
-            FindObjectOfType<MoleSpawning>().time_get += 3;
+            FindObjectOfType<Timer>().Add(3);
         }
     }
 

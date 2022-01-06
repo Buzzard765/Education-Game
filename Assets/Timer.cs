@@ -9,7 +9,7 @@ namespace Utility {
     {
         public Action onTimerExpired;
 
-        public float TimeLimit;
+        public float Limit;
         private bool onTick;
 
         private Text Text_Timer;
@@ -18,11 +18,11 @@ namespace Utility {
         public void startTimer(float duration)
         {
             onTick = true;
-            TimeLimit = duration;
+            Limit = duration;
         }
 
         public void Add(float amount) {
-            TimeLimit += amount;
+            Limit += amount;
         }
 
         void Start()
@@ -33,11 +33,11 @@ namespace Utility {
         // Update is called once per frame
         void Update()
         {
-            Text_Timer.text = TimeLimit.ToString("F0");
+            Text_Timer.text = Limit.ToString("F0");
             if (onTick == true)
             {
-                TimeLimit -= Time.deltaTime;
-                if (TimeLimit <= 0)
+                Limit -= Time.deltaTime;
+                if (Limit <= 0)
                 {
                     TimeOut();
                 }
@@ -46,7 +46,7 @@ namespace Utility {
 
         private void TimeOut() {
             onTick = false;
-            TimeLimit = 0;
+            Limit = 0;
             onTimerExpired.Invoke();
         }
     }
