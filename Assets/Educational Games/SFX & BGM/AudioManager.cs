@@ -7,13 +7,14 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public AllAudio[] BGM, SFX;
+    public AudioMixerGroup MasterVol, BGMVol, SFXVol;
     // Start is called before the first frame update
     private void Awake()
     {
         foreach (AllAudio sound in SFX) {
             sound.source = gameObject.AddComponent<AudioSource>();
             sound.source.clip = sound.clip;
-            
+            sound.VolumeSetting = SFXVol;            
         }
 
         foreach (AllAudio music in BGM)
@@ -22,6 +23,7 @@ public class AudioManager : MonoBehaviour
             music.source.clip = music.clip;
             music.source.loop = music.Loop;
             music.source.volume = music.volume;
+            music.VolumeSetting = BGMVol;
         }
     }
 
@@ -45,6 +47,17 @@ public class AudioManager : MonoBehaviour
     public void OneShotMusic(string name) {
         AllAudio selectedMusic = Array.Find(BGM, music => music.name == name);
         selectedMusic.source.PlayOneShot(selectedMusic.clip);
+    }
+
+    public void SetSFXVol(float Volume) {
+        SFXVol.audioMixer.SetFloat("SFXVol", Volume);
+        PlayerPrefs.SetFloat("SFXVol", Volume);
+    }
+
+    public void SetBGMVol(float Volume)
+    {
+        BGMVol.audioMixer.SetFloat("BGMVol", Volume);
+        PlayerPrefs.SetFloat("BGMVol", Volume);
     }
 
     void Start()

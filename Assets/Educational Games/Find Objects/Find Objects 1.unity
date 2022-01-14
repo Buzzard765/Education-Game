@@ -393,7 +393,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2506,14 +2506,19 @@ MonoBehaviour:
     volume: 1
     pitch: 0
     Loop: 1
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Stage Clear
     clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
     volume: 1
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   SFX: []
+  MasterVol: {fileID: 0}
+  BGMVol: {fileID: 0}
+  SFXVol: {fileID: 0}
 --- !u!1 &3371515198937124631
 GameObject:
   m_ObjectHideFlags: 0

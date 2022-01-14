@@ -12,6 +12,7 @@ public class AllAudio
     [Range(0,1f)]public float volume;
     [Range(0.1f, 3f)] public float pitch;
     public bool Loop;
+    public AudioMixerGroup VolumeSetting;
 
     [HideInInspector]public AudioSource source;
 

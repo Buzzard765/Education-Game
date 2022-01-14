@@ -34,8 +34,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("test");
-        Debug.Log(lose);
+            
         //direction.x = Input.GetAxisRaw("Horizontal");
         //direction.y = Input.GetAxisRaw("Vertical");
         if (lose == false) {

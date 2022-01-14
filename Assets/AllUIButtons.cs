@@ -38,6 +38,8 @@ public class AllUIButtons : MonoBehaviour
         Time.timeScale = 1;
     }
     public void MainMenu() {
+        Debug.Log("Heading back");
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 }

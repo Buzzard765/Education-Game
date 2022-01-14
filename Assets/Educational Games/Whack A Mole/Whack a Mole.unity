@@ -2152,20 +2152,26 @@ MonoBehaviour:
     volume: 1
     pitch: 0
     Loop: 1
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Stage Clear
     clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
     volume: 1
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Whistle
     clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
     volume: 1
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   SFX: []
+  MasterVol: {fileID: 0}
+  BGMVol: {fileID: 0}
+  SFXVol: {fileID: 0}
 --- !u!1 &7210238543781993833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,7 +2326,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1778467458}
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
