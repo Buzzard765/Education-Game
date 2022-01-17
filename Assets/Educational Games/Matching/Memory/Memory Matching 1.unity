@@ -330,7 +330,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 2160, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1017,14 +1017,21 @@ MonoBehaviour:
     volume: 1
     pitch: 0
     Loop: 1
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Stage Clear
     clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
     volume: 1
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   SFX: []
+  MasterVol: {fileID: 0}
+  BGMVol: {fileID: 0}
+  SFXVol: {fileID: 0}
+  Slider_BGM: {fileID: 0}
+  Slider_SFX: {fileID: 0}
 --- !u!1 &3976421795971201225
 GameObject:
   m_ObjectHideFlags: 0

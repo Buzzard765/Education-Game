@@ -16,7 +16,7 @@ public class MoleSpawning : MonoBehaviour
     //public GameObject Mole;
     //public Transform[] hole;
     //public bool hasMole;
-    public List<GameObject> AllHoles = new List<GameObject>();
+    public List<Mole> AllHoles = new List<Mole>();
     public float spawnRate;
     private float currentspawnRate;
     private int randomSpot;
@@ -51,8 +51,8 @@ public class MoleSpawning : MonoBehaviour
         FindObjectOfType<AudioManager>().PlayMusic("Level Music");
         currentspawnRate = spawnRate;
         randomSpot = Random.Range(0, AllHoles.Count);
-        foreach (GameObject holes in AllHoles) {
-            holes.SetActive(false);
+        foreach (Mole holes in AllHoles) {
+            holes.MoleState = Mole.states.inGround;
         }
         timer.startTimer(timeLimit);
         Panel.SetActive(false);
@@ -73,13 +73,13 @@ public class MoleSpawning : MonoBehaviour
     }
 
     void RandomizeSpawn() {
-        if (currentspawnRate <= 0 && AllHoles[randomSpot].activeSelf == false)
+        if (currentspawnRate <= 0 && AllHoles[randomSpot].MoleState == Mole.states.inGround)
         {
             spawnMole(randomSpot);
             randomSpot = Random.Range(0, AllHoles.Count);
             currentspawnRate = spawnRate;
         }
-        else if (AllHoles[randomSpot].activeSelf == true)
+        else if (AllHoles[randomSpot].MoleState == Mole.states.OutGround)
         {
             randomSpot = Random.Range(0, AllHoles.Count);
         }
@@ -90,7 +90,7 @@ public class MoleSpawning : MonoBehaviour
     }
 
     void spawnMole(int index) {
-        AllHoles[index].SetActive(true);
+        AllHoles[index].MoleState = Mole.states.OutGround;
     }
 
     void Result(){

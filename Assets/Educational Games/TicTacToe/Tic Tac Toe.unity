@@ -877,102 +877,60 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &404541179
-AudioSource:
+--- !u!114 &404541179
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404541178}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 40c89bf2865fb024ea690d7a05054595, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e14af237524097469871a80d1c4adb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM:
+  - name: Level Music
+    clip: {fileID: 8300000, guid: 40c89bf2865fb024ea690d7a05054595, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 1
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  SFX:
+  - name: X Mark
+    clip: {fileID: 8300000, guid: c76921ab3a88ae949ba29d726bea55a6, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  - name: O Mark
+    clip: {fileID: 8300000, guid: b2e31760b114fce438cf005f260011dc, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: 2731a82a1f9648f44ab2782b6f60d414, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  - name: Draw
+    clip: {fileID: 8300000, guid: 79272512a188f914fb15a613c68d6ae7, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  MasterVol: {fileID: 0}
+  BGMVol: {fileID: 0}
+  SFXVol: {fileID: 0}
+  Slider_BGM: {fileID: 0}
+  Slider_SFX: {fileID: 0}
 --- !u!4 &404541180
 Transform:
   m_ObjectHideFlags: 0
@@ -2650,9 +2608,9 @@ MonoBehaviour:
   WinPanel: {fileID: 800230677}
   DrawPanel: {fileID: 193676259}
   PanelText: {fileID: 1696829804}
-  XScoreText: {fileID: 0}
-  OScoreText: {fileID: 0}
-  WinOrDraw: {fileID: 0}
+  XScoreText: {fileID: 1458943212}
+  OScoreText: {fileID: 687797244}
+  WinOrDraw: {fileID: 1696829804}
   SFX_X: {fileID: 8300000, guid: c76921ab3a88ae949ba29d726bea55a6, type: 3}
   SFX_O: {fileID: 8300000, guid: b2e31760b114fce438cf005f260011dc, type: 3}
   SFX_Win: {fileID: 8300000, guid: 2731a82a1f9648f44ab2782b6f60d414, type: 3}

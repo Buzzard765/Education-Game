@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6a404b5fc5146d4085325251e8fb260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeLimit: 15
+  Limit: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,18 +2975,21 @@ MonoBehaviour:
     volume: 1
     pitch: 0
     Loop: 1
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Stage Clear
     clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
     volume: 1
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Stage Failed
     clip: {fileID: 8300000, guid: 79272512a188f914fb15a613c68d6ae7, type: 3}
     volume: 1
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   SFX:
   - name: Fruit
@@ -2994,10 +2997,17 @@ MonoBehaviour:
     volume: 0
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Trash
     clip: {fileID: 8300000, guid: df87da67983e75e40a2a5659bcb5794d, type: 3}
     volume: 0
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
+  MasterVol: {fileID: 24300002, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  BGMVol: {fileID: 6461924899465442920, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  SFXVol: {fileID: -8028054222948938115, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  Slider_BGM: {fileID: 0}
+  Slider_SFX: {fileID: 0}

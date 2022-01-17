@@ -3,18 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
     public AllAudio[] BGM, SFX;
     public AudioMixerGroup MasterVol, BGMVol, SFXVol;
+    public Slider Slider_BGM, Slider_SFX;
     // Start is called before the first frame update
     private void Awake()
     {
         foreach (AllAudio sound in SFX) {
             sound.source = gameObject.AddComponent<AudioSource>();
             sound.source.clip = sound.clip;
-            sound.VolumeSetting = SFXVol;            
+            sound.source.outputAudioMixerGroup = SFXVol;         
         }
 
         foreach (AllAudio music in BGM)
@@ -23,7 +25,7 @@ public class AudioManager : MonoBehaviour
             music.source.clip = music.clip;
             music.source.loop = music.Loop;
             music.source.volume = music.volume;
-            music.VolumeSetting = BGMVol;
+            music.source.outputAudioMixerGroup = BGMVol;
         }
     }
 
@@ -50,14 +52,14 @@ public class AudioManager : MonoBehaviour
     }
 
     public void SetSFXVol(float Volume) {
-        SFXVol.audioMixer.SetFloat("SFXVol", Volume);
-        PlayerPrefs.SetFloat("SFXVol", Volume);
+        SFXVol.audioMixer.SetFloat("SFX", Mathf.Log10(Volume) * 20);
+        PlayerPrefs.SetFloat("SFX", Volume);
     }
 
     public void SetBGMVol(float Volume)
     {
-        BGMVol.audioMixer.SetFloat("BGMVol", Volume);
-        PlayerPrefs.SetFloat("BGMVol", Volume);
+        BGMVol.audioMixer.SetFloat("BGM", Mathf.Log10(Volume) * 20);
+        PlayerPrefs.SetFloat("BGM", Volume);
     }
 
     void Start()
