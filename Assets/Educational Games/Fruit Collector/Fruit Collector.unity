@@ -1263,7 +1263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.2509804}
+  m_Color: {r: 0.9427508, g: 1, b: 0.5, a: 0.5019608}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1408,7 +1408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.2509804}
+  m_Color: {r: 0.9427508, g: 1, b: 0.5, a: 0.5019608}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1793,7 +1793,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 2160, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1834,9 +1834,9 @@ RectTransform:
   m_Children:
   - {fileID: 1906347689}
   - {fileID: 771266369}
+  - {fileID: 1912261427}
   - {fileID: 1723293741}
   - {fileID: 1794132190}
-  - {fileID: 1912261427}
   - {fileID: 812702753}
   - {fileID: 831499365}
   m_Father: {fileID: 0}
@@ -2016,7 +2016,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1451121056}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.39994058, y: 0}
   m_AnchorMax: {x: 0.60244185, y: 0.14593497}
@@ -2296,7 +2296,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1451121056}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.21316059, y: 0.14593497}
@@ -2695,18 +2695,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912261426}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1156950424}
   - {fileID: 1087485178}
   m_Father: {fileID: 1451121056}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18641227, y: 0.14593497}
   m_AnchorMax: {x: 0.8030271, y: 0.870482}
-  m_AnchoredPosition: {x: 10.135, y: 0}
+  m_AnchoredPosition: {x: 10.13501, y: 1100}
   m_SizeDelta: {x: -20.270996, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1912261428
@@ -2978,7 +2978,7 @@ MonoBehaviour:
     VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Stage Clear
-    clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
+    clip: {fileID: 8300000, guid: 33c0fac72eabee14dba9622c38dd20e9, type: 3}
     volume: 1
     pitch: 0
     Loop: 0

@@ -76,6 +76,7 @@ public class MoleSpawning : MonoBehaviour
         if (currentspawnRate <= 0 && AllHoles[randomSpot].MoleState == Mole.states.inGround)
         {
             spawnMole(randomSpot);
+            FindObjectOfType<AudioManager>().PlaySound("Pop Up");
             randomSpot = Random.Range(0, AllHoles.Count);
             currentspawnRate = spawnRate;
         }
@@ -100,11 +101,13 @@ public class MoleSpawning : MonoBehaviour
     }
 
     IEnumerator ResultBGMs() {
-
-        FindObjectOfType<AudioManager>().StopMusic("Level Music");
-        //FindObjectOfType<AudioManager>().PlayMusic("Whistle");
-        yield return new WaitForSeconds(2f);
         Panel.SetActive(true);
+        Vector3 PanelPos = Panel.transform.position;
+        FindObjectOfType<AudioManager>().StopMusic("Level Music");
+        FindObjectOfType<AudioManager>().PlayMusic("Whistle");       
+        yield return new WaitForSeconds(2f);
+
+        LeanTween.move(Panel, new Vector3(PanelPos.x, PanelPos.y - 1100f, PanelPos.z), 1f).setEaseOutBounce();
         ResultText.text = "Skor yang didapat: \n" + score;
         FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
 

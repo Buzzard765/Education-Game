@@ -592,6 +592,7 @@ MonoBehaviour:
   pctrList: []
   SFX_Wrong: {fileID: 8300000, guid: 18f42ac9adf0b9442891dcf81e860834, type: 3}
   SFX_Right: {fileID: 8300000, guid: 5d54696fe3657a843ae592970e7e6a77, type: 3}
+  WinPanel: {fileID: 7866964775905027978}
 --- !u!114 &988879962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,7 +1027,21 @@ MonoBehaviour:
     Loop: 0
     VolumeSetting: {fileID: 0}
     source: {fileID: 0}
-  SFX: []
+  SFX:
+  - name: Wrong
+    clip: {fileID: 8300000, guid: 18f42ac9adf0b9442891dcf81e860834, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  - name: Correct
+    clip: {fileID: 8300000, guid: 5d54696fe3657a843ae592970e7e6a77, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
   MasterVol: {fileID: 0}
   BGMVol: {fileID: 0}
   SFXVol: {fileID: 0}
@@ -1309,7 +1324,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7866964775905027978}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1320,7 +1335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1080}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7866964775905027978

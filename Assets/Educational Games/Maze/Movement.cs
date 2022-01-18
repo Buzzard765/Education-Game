@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     public static bool cleared = false;
     public static bool lose = false;
     public Joystick js;
-    public int speed;
+    public float speed;
 
     [SerializeField]private GameObject Panel_Win, Panel_Lose;
 
@@ -53,29 +53,37 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        Vector3 PanelPos = Panel_Lose.transform.position;
         if (collision.gameObject.CompareTag("Key")) {
             hasKey ++;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Wrong")) {
+            lose = true;
             Panel_Lose.SetActive(true);
             FindObjectOfType<AudioManager>().StopMusic("Level Music");
             FindObjectOfType<AudioManager>().PlayMusic("Stage Failed");
+            LeanTween.move(Panel_Lose, new Vector3(PanelPos.x, PanelPos.y - 1100f, PanelPos.z), 1f).setEaseOutBounce();
         }
-        if(collision.gameObject.name.Contains("Gate") && hasKey != 0) {
-            hasKey --;
+        if(collision.gameObject.name.Contains("Gate") && hasKey > 0) {
+            hasKey--;
             Destroy(collision.gameObject);
+            FindObjectOfType<AudioManager>().PlaySound("Unlock");
+        }
+        if (collision.gameObject.name.Contains("Fruit")) {
+            FindObjectOfType<AudioManager>().PlaySound("Crunch");
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name.Contains("Goal")) {
+        Vector3 PanelPos = Panel_Lose.transform.position;
+        if (collision.gameObject.name.Contains("Goal")) {
             Debug.Log("Cleared");
             FindObjectOfType<AudioManager>().StopMusic("Level Music");
             FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
             Panel_Win.SetActive(true);
+            LeanTween.move(Panel_Lose, new Vector3(PanelPos.x, PanelPos.y - 1100f, PanelPos.z), 1f).setEaseOutBounce();
         }
     }
 }

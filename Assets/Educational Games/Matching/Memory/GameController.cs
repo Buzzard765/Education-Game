@@ -20,24 +20,24 @@ public class GameController : MonoBehaviour
 
     [SerializeField] AudioClip SFX_Wrong, SFX_Right;
 
-    private GameObject WinPanel;
+    [SerializeField] private GameObject WinPanel;
 
     // Start is called before the first frame update
     // 
     private void Awake()
     {
         pictures = Resources.LoadAll<Sprite>("Sprites/"+ spriteName);
-        allAudio = GetComponent<AudioSource>();
-        WinPanel = GameObject.Find("Victory");
+        allAudio = GetComponent<AudioSource>();      
         WinPanel.SetActive(false);
     }
     void Start()
     {
+        FindObjectOfType<AudioManager>().PlayMusic("Level Music");
         getButtons();
         AddListener();
         AddPairs();
         Shuffle(pctrList);
-        Guesses = pctrList.Count / 2;
+        PairLimit = pctrList.Count / 2;
     }
 
     
@@ -84,13 +84,15 @@ public class GameController : MonoBehaviour
         if (firstPair == false)
         {
             firstPair = true;
-            firstPairIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+            firstPairIndex = int.Parse
+                (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
             firstPairName = pctrList[firstPairIndex].name;
             bttnList[firstPairIndex].image.sprite = pctrList[firstPairIndex];
         }
         else if (secondPair == false) {
             secondPair = true;
-            secondPairIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+            secondPairIndex = int.Parse
+                (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
             secondPairName = pctrList[secondPairIndex].name;
             bttnList[secondPairIndex].image.sprite = pctrList[secondPairIndex];
             Guesses++;
@@ -111,14 +113,14 @@ public class GameController : MonoBehaviour
             bttnList[firstPairIndex].image.color = new Color(0, 0, 0, 0);
             bttnList[secondPairIndex].image.color = new Color(0, 0, 0, 0);
             Debug.Log("Perfect Match");
-            allAudio.PlayOneShot(SFX_Right);
+            FindObjectOfType<AudioManager>().PlaySound("Correct");
             LimitCheck();
         }
         else
         {
             bttnList[firstPairIndex].image.sprite = Background;
             bttnList[secondPairIndex].image.sprite = Background;
-            allAudio.PlayOneShot(SFX_Wrong);
+            FindObjectOfType<AudioManager>().PlaySound("Wrong");
             Debug.Log("Didn't Match");
         }
         yield return new WaitForSeconds(.5f);
@@ -127,9 +129,13 @@ public class GameController : MonoBehaviour
     }
 
     void LimitCheck() {
+        Vector3 PanelPos = WinPanel.transform.position;
         CorrectPair++;
         if (CorrectPair == PairLimit) {
+            FindObjectOfType<AudioManager>().StopMusic("Wrong");
+            FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
             WinPanel.SetActive(true);
+            LeanTween.move(WinPanel, new Vector3(PanelPos.x, PanelPos.y - (1620 - 539)f, PanelPos.z), 1f).setEaseOutBounce();
             Debug.Log("Game Cleared");
             Debug.Log("you've made" + Guesses + "guesses to finish");
         }

@@ -17,7 +17,7 @@ public class QuizQuestion : MonoBehaviour
         public string content;
     }
 
-    private Image gambarSoal;
+    [SerializeField]private Image gambarSoal;
     private Text questiontext;
     private Text[] answerText = new Text[4];
     private GameObject Victory;
@@ -35,14 +35,14 @@ public class QuizQuestion : MonoBehaviour
         //BGM = GameObject.Find("BGM").GetComponent<AudioSource>();
         FindObjectOfType<AudioManager>().PlayMusic("Level Music");
 
-        try
+        /*try
         {
             gambarSoal = GameObject.Find("Question Image").GetComponent<Image>();
         }
         catch
         {
             Debug.Log("Proceeding Without Image");
-        }
+        }*/
         
         questiontext = GameObject.Find("Question").GetComponent<Text>();
         answerText[0] = GameObject.Find("A").GetComponent<Text>();

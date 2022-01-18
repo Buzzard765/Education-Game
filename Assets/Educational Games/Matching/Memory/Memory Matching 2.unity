@@ -597,6 +597,7 @@ MonoBehaviour:
   pctrList: []
   SFX_Wrong: {fileID: 8300000, guid: 18f42ac9adf0b9442891dcf81e860834, type: 3}
   SFX_Right: {fileID: 8300000, guid: 5d54696fe3657a843ae592970e7e6a77, type: 3}
+  WinPanel: {fileID: 5772138292710262444}
 --- !u!114 &988879962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1365,7 +1366,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5772138292710262444}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1376,6 +1377,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1080}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

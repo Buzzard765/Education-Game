@@ -30,27 +30,30 @@ namespace Manager {
         {
             
             timer.startTimer(limit);
-            FindObjectOfType<AudioManager>().PlayMusic("Level Music");         
+            FindObjectOfType<AudioManager>().PlayMusic("Level Music");
+            
             Panel.SetActive(false);
         }
         
         // Update is called once per frame
         void Update()
         {
-
+            ScoreText.text = "Score : " + score.ToString();
 
         }
 
         private void rewriteScore()
         {
             onPlay = false;
+            Vector3 PanelPos = Panel.transform.position;
             FindObjectOfType<AudioManager>().StopMusic("Level Music");
             Panel.SetActive(true);
+            LeanTween.move(Panel, new Vector3(PanelPos.x, PanelPos.y - 1100f, PanelPos.z), 1f).setEaseOutBounce();
             if (score > highscore)
             {
                 highscore = score;
                 PlayerPrefs.SetInt("highscore", score);
-                FindObjectOfType<AudioManager>().PlayMusic("Stage Cleared");
+                FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
                 HighscoreText.text = "New Highscore!\n" + highscore.ToString();
             }
             else

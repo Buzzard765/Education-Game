@@ -3657,6 +3657,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 9159725472382771}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &732843812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7165511943690335780, guid: 669aa514a63d73940ac6532576e588e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1950278189}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &818782158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8141,7 +8147,7 @@ PrefabInstance:
     - target: {fileID: 7677965838582835181, guid: b102c18f909735d4094ad5a07f95ac61,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 972.00006
       objectReference: {fileID: 0}
     - target: {fileID: 7677965838582835181, guid: b102c18f909735d4094ad5a07f95ac61,
         type: 3}
@@ -8365,6 +8371,12 @@ PrefabInstance:
       objectReference: {fileID: 6735641890412103061}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 628920418b2b2f142a20b513fa5d7922, type: 3}
+--- !u!1 &1522061787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7677965838582835182, guid: b102c18f909735d4094ad5a07f95ac61,
+    type: 3}
+  m_PrefabInstance: {fileID: 1425496499}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1524441344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4175897172722366701, guid: 628920418b2b2f142a20b513fa5d7922,
@@ -8563,8 +8575,8 @@ MonoBehaviour:
   rb2d: {fileID: 0}
   js: {fileID: 1183366959}
   speed: 2
-  Panel_Win: {fileID: 0}
-  Panel_Lose: {fileID: 0}
+  Panel_Win: {fileID: 1522061787}
+  Panel_Lose: {fileID: 732843812}
 --- !u!212 &1566824835
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8986,6 +8998,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7165511942479446001, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165511942479446001, guid: 669aa514a63d73940ac6532576e588e2,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 152749177}
@@ -8993,6 +9010,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165511942479446001, guid: 669aa514a63d73940ac6532576e588e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7165511942676271641, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
@@ -9119,7 +9141,7 @@ PrefabInstance:
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 972
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
@@ -9749,20 +9771,42 @@ MonoBehaviour:
     volume: 1
     pitch: 0
     Loop: 1
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Stage Clear
-    clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
+    clip: {fileID: 8300000, guid: 33c0fac72eabee14dba9622c38dd20e9, type: 3}
     volume: 1
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Stage Failed
-    clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
+    clip: {fileID: 8300000, guid: df87da67983e75e40a2a5659bcb5794d, type: 3}
     volume: 1
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
-  SFX: []
+  SFX:
+  - name: Crunch
+    clip: {fileID: 0}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  - name: Unlock
+    clip: {fileID: 8300000, guid: 302bb2afb902d0f4893de9117f3b3070, type: 3}
+    volume: 0
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  MasterVol: {fileID: 0}
+  BGMVol: {fileID: 0}
+  SFXVol: {fileID: 0}
+  Slider_BGM: {fileID: 0}
+  Slider_SFX: {fileID: 0}
 --- !u!1 &581501154708743165
 GameObject:
   m_ObjectHideFlags: 0

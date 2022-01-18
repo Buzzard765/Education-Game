@@ -1247,7 +1247,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 972}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &339440851
@@ -7863,7 +7863,7 @@ PrefabInstance:
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 972
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
@@ -15074,20 +15074,42 @@ MonoBehaviour:
     volume: 1
     pitch: 0
     Loop: 1
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Stage Clear
-    clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
+    clip: {fileID: 8300000, guid: 33c0fac72eabee14dba9622c38dd20e9, type: 3}
     volume: 1
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Stage Failed
-    clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
+    clip: {fileID: 8300000, guid: df87da67983e75e40a2a5659bcb5794d, type: 3}
     volume: 1
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
-  SFX: []
+  SFX:
+  - name: Crunch
+    clip: {fileID: 8300000, guid: 7cc28ff5480522a46acd890578dca336, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  - name: Unlock
+    clip: {fileID: 8300000, guid: 302bb2afb902d0f4893de9117f3b3070, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  MasterVol: {fileID: 0}
+  BGMVol: {fileID: 0}
+  SFXVol: {fileID: 0}
+  Slider_BGM: {fileID: 0}
+  Slider_SFX: {fileID: 0}
 --- !u!1 &1995080432267503985
 GameObject:
   m_ObjectHideFlags: 0
