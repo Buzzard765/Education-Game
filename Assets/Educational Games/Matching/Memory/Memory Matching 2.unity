@@ -850,6 +850,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2118170805}
+    - target: {fileID: 7817782969238069564, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5287390547124644568}
+    - target: {fileID: 7817782969238069564, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetBGMVol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817782970541162640, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5287390547124644568}
+    - target: {fileID: 7817782970541162640, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVol
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23bd156afb0e3c46946986023c11ad1, type: 3}
 --- !u!224 &1352585875 stripped
@@ -864,6 +884,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1352585874}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1352585877 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7817782970541162640, guid: e23bd156afb0e3c46946986023c11ad1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1352585874}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1352585878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7817782969238069564, guid: e23bd156afb0e3c46946986023c11ad1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1352585874}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2118170803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1016,6 +1060,84 @@ MonoBehaviour:
   m_Spacing: {x: 20, y: 20}
   m_Constraint: 2
   m_ConstraintCount: 4
+--- !u!114 &5287390547124644568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287390547124644569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e14af237524097469871a80d1c4adb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM:
+  - name: Level Music
+    clip: {fileID: 8300000, guid: a7b18c7ae78a104438fe614b95877ee0, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 1
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  - name: Stage Clear
+    clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  SFX:
+  - name: Wrong
+    clip: {fileID: 8300000, guid: 18f42ac9adf0b9442891dcf81e860834, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  - name: Correct
+    clip: {fileID: 8300000, guid: 5d54696fe3657a843ae592970e7e6a77, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  MasterVol: {fileID: 24300002, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  BGMVol: {fileID: -8028054222948938115, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  SFXVol: {fileID: 6461924899465442920, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  Slider_BGM: {fileID: 1352585878}
+  Slider_SFX: {fileID: 1352585877}
+--- !u!1 &5287390547124644569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5287390547124644571}
+  - component: {fileID: 5287390547124644568}
+  m_Layer: 0
+  m_Name: BGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5287390547124644571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287390547124644569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1465.5, y: 471.43, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!222 &5772138290901836020
 CanvasRenderer:
   m_ObjectHideFlags: 0

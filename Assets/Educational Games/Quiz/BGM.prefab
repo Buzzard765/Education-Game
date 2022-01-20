@@ -45,15 +45,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM:
   - name: Level Music
-    clip: {fileID: 8300000, guid: e1f7acb33bf334540ad77de03081f900, type: 3}
+    clip: {fileID: 0}
     volume: 1
     pitch: 0
     Loop: 1
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   - name: Stage Clear
-    clip: {fileID: 8300000, guid: 031c4d2dd558cc847b871a0065a9237d, type: 3}
+    clip: {fileID: 0}
     volume: 1
     pitch: 0
     Loop: 0
+    VolumeSetting: {fileID: 0}
     source: {fileID: 0}
   SFX: []
+  MasterVol: {fileID: 24300002, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  BGMVol: {fileID: 6461924899465442920, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  SFXVol: {fileID: -8028054222948938115, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  Slider_BGM: {fileID: 0}
+  Slider_SFX: {fileID: 0}

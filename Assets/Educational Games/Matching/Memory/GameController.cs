@@ -135,7 +135,7 @@ public class GameController : MonoBehaviour
             FindObjectOfType<AudioManager>().StopMusic("Wrong");
             FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
             WinPanel.SetActive(true);
-            LeanTween.move(WinPanel, new Vector3(PanelPos.x, PanelPos.y - (1620 - 539)f, PanelPos.z), 1f).setEaseOutBounce();
+            LeanTween.move(WinPanel, new Vector3(PanelPos.x, PanelPos.y - 1081f, PanelPos.z), 1f).setEaseOutBounce();
             Debug.Log("Game Cleared");
             Debug.Log("you've made" + Guesses + "guesses to finish");
         }

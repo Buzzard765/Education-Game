@@ -2450,8 +2450,52 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Main Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 7817782969238069564, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2720782515056940688}
+    - target: {fileID: 7817782969238069564, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetBGMVol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817782970541162640, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2720782515056940688}
+    - target: {fileID: 7817782970541162640, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVol
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23bd156afb0e3c46946986023c11ad1, type: 3}
+--- !u!114 &341807509 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7817782970541162640, guid: e23bd156afb0e3c46946986023c11ad1,
+    type: 3}
+  m_PrefabInstance: {fileID: 341807508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &341807510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7817782969238069564, guid: e23bd156afb0e3c46946986023c11ad1,
+    type: 3}
+  m_PrefabInstance: {fileID: 341807508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &437334118
 GameObject:
   m_ObjectHideFlags: 0
@@ -5381,7 +5425,7 @@ GameObject:
   - component: {fileID: 1114229889}
   - component: {fileID: 1114229888}
   m_Layer: 0
-  m_Name: GameManager'
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6044,7 +6088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
   js: {fileID: 1183366959}
-  speed: 3
+  speed: 2.5
   Panel_Win: {fileID: 7677965839468462265}
   Panel_Lose: {fileID: 1585557766}
 --- !u!212 &1566824835
@@ -6167,7 +6211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 972}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1585557768
@@ -7118,11 +7162,18 @@ MonoBehaviour:
     Loop: 0
     VolumeSetting: {fileID: 0}
     source: {fileID: 0}
-  MasterVol: {fileID: 0}
-  BGMVol: {fileID: 0}
-  SFXVol: {fileID: 0}
-  Slider_BGM: {fileID: 0}
-  Slider_SFX: {fileID: 0}
+  - name: Unlock
+    clip: {fileID: 8300000, guid: 302bb2afb902d0f4893de9117f3b3070, type: 3}
+    volume: 1
+    pitch: 0
+    Loop: 0
+    VolumeSetting: {fileID: 0}
+    source: {fileID: 0}
+  MasterVol: {fileID: 24300002, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  BGMVol: {fileID: 6461924899465442920, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  SFXVol: {fileID: -8028054222948938115, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  Slider_BGM: {fileID: 341807510}
+  Slider_SFX: {fileID: 341807509}
 --- !u!1 &2720782515056940689
 GameObject:
   m_ObjectHideFlags: 0

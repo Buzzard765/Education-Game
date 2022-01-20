@@ -17,28 +17,21 @@ public class FindObjectCase : MonoBehaviour
 
     public List<ImgQuestion> QuestionList = new List<ImgQuestion>();   
     private Image gambarSoal;
-    private Text questiontext;
-    private Text[] answerText = new Text[4];
-    private GameObject Victory;
+    [SerializeField] private Text questiontext;  
+    [SerializeField] private GameObject Victory;
     [SerializeField] Button[] AnswerChoices;
 
     private int index, randomCase;
-
-    private AudioSource allAudio;
-    [SerializeField] AudioClip SFX_Wrong, SFX_Correct;
+    
     // Start is called before the first frame update
     void Start()
-    {
-        allAudio = GetComponent<AudioSource>();
+    {      
         FindObjectOfType<AudioManager>().PlayMusic("Level Music");
-        //gambarSoal = GameObject.Find("Question Image").GetComponent<Image>();
-        questiontext = GameObject.Find("Question").GetComponent<Text>();       
+        //gambarSoal = GameObject.Find("Question Image").GetComponent<Image>();          
         //gambarSoal = Scenery;
 
         index = Random.Range(0, QuestionList.Count);
-
-        Victory = GameObject.Find("Victory");
-        Victory.SetActive(false);
+      
     }
 
     // Update is called once per frame
@@ -61,13 +54,13 @@ public class FindObjectCase : MonoBehaviour
     {
         if (QuestionList[index].answerIndex == answer)
         {
-            allAudio.PlayOneShot(SFX_Correct);
+            FindObjectOfType<AudioManager>().PlaySound("Correct");
             StartCoroutine(ButtonTransition(2f));
         }
         else
         {
             Debug.Log("Wrong Answer");
-            allAudio.PlayOneShot(SFX_Wrong);
+            FindObjectOfType<AudioManager>().PlaySound("Wrong");
         }
     }
 

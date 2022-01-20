@@ -52,10 +52,7 @@ public class TicTacToeController : MonoBehaviour
             WinningLine[i].SetActive(false);
         }
         AllAudio = GetComponent<AudioSource>();
-
-        BGM = GameObject.Find("BGM").GetComponent<AudioSource>();
-        WinOrDraw = GameObject.Find("WinOrDraw").GetComponent<Text>();
-        WinOrDraw.gameObject.SetActive(false);
+    
     }
 
     // Update is called once per frame
@@ -115,8 +112,7 @@ public class TicTacToeController : MonoBehaviour
         for (int i = 0; i < solutions.Length; i++) {
             if (solutions[i] == (PlayerTurn + 1) * 3)
             {
-                BGM.Stop();
-                AllAudio.PlayOneShot(SFX_Win);
+                
                 Debug.Log("We Have a Winner: Player " + (PlayerTurn + 1) + "!");
                 WinOrDraw.text = "We Have a Winner: Player " + (PlayerTurn + 1) + "!";
                 WinOrDraw.gameObject.SetActive(true);
@@ -134,29 +130,33 @@ public class TicTacToeController : MonoBehaviour
         /*if (drawCondiSpace > 8 && drawCondiLine == 40) {
             
         }*/
-        DrawPanel.gameObject.SetActive(true);
-        WinOrDraw.text = "It's a tie...";
-        WinOrDraw.gameObject.SetActive(true);
+        DrawPanel.gameObject.SetActive(true);  
     }
 
     void DisplayWinner(int LineIndex) {
-
+        Vector3 PanelPos = WinPanel.transform.position;
         FindObjectOfType<AudioManager>().StopMusic("Level Music");
         FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
 
         WinningLine[LineIndex].SetActive(true);
+        WinPanel.gameObject.SetActive(true);
         if (PlayerTurn == 0)
         {
+            Color Red = new Color(1, 0.8f, 0.8f, 1);
             OScore++;
-            WinPanel.gameObject.SetActive(true);
-            WinPanel.color = new Color(215, 220, 255, 255);
+            OScoreText.text = OScore.ToString();
+            WinPanel.color = Red;
         }
         else if (PlayerTurn == 1)
         {
-            XScore++;           
-            WinPanel.gameObject.SetActive(true);
-            WinPanel.color = new Color(255, 215, 215, 255);
-        }       
+            Color Blue = new Color(0.8f, 0.8f, 1f, 1f);
+            XScore++;
+            XScoreText.text = OScore.ToString();                      
+            WinPanel.color = Blue;
+        }
+        LeanTween.move
+               (WinPanel.gameObject, new Vector3(PanelPos.x, PanelPos.y - 1100, PanelPos.z), 2f)
+               .setEaseOutBounce();
     }
 
     public void SwitchPlayer(int whichPlayer) {
@@ -179,13 +179,14 @@ public class TicTacToeController : MonoBehaviour
         }
     }
 
-    public void Rematch() {
+    public void Rematch(GameObject Panel) {
+        
         FindObjectOfType<AudioManager>().PlayMusic("Level Music");
-        BGM.Play();
+        
         PlayerTurn = 0;
         turnCount = 0;
         TurnIcon[0].SetActive(true);
-        TurnIcon[1].SetActive(false);
+        TurnIcon[1].SetActive(true);
         drawCondiLine = 0;
         drawCondiSpace = 0;
         //Turn On All TTTSpaces
@@ -207,5 +208,16 @@ public class TicTacToeController : MonoBehaviour
 
         XPlayer.interactable = true;
         OPlayer.interactable = true;
+        StartCoroutine(ReturnPanel(Panel));
+    }
+
+    IEnumerator ReturnPanel(GameObject Panel) {
+        
+        Vector3 PanelPos = Panel.transform.position;
+        LeanTween.move
+                (Panel.gameObject, new Vector3(PanelPos.x, PanelPos.y + 1100, PanelPos.z), 1f);
+        yield return new WaitForSeconds(2f);
+        Panel.SetActive(false);
+        StopCoroutine(ReturnPanel(Panel));
     }
 }

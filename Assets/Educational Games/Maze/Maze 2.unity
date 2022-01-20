@@ -2055,7 +2055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14, y: 5.25, z: -10}
+  m_LocalPosition: {x: 2.78, y: -2.65, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7413,6 +7413,31 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 7817782969238069564, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1995080432267503984}
+    - target: {fileID: 7817782969238069564, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetBGMVol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817782970541162640, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817782970541162640, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1995080432267503984}
+    - target: {fileID: 7817782970541162640, guid: e23bd156afb0e3c46946986023c11ad1,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVol
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23bd156afb0e3c46946986023c11ad1, type: 3}
 --- !u!224 &909359767 stripped
@@ -7427,6 +7452,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 909359766}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &909359769 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7817782970541162640, guid: e23bd156afb0e3c46946986023c11ad1,
+    type: 3}
+  m_PrefabInstance: {fileID: 909359766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &909359770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7817782969238069564, guid: e23bd156afb0e3c46946986023c11ad1,
+    type: 3}
+  m_PrefabInstance: {fileID: 909359766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &914264627
 GameObject:
   m_ObjectHideFlags: 0
@@ -7882,6 +7931,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 669aa514a63d73940ac6532576e588e2, type: 3}
+--- !u!1 &1039203222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7165511943690335780, guid: 669aa514a63d73940ac6532576e588e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1039203221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1060656980
 GameObject:
   m_ObjectHideFlags: 0
@@ -12247,8 +12302,8 @@ MonoBehaviour:
   rb2d: {fileID: 0}
   js: {fileID: 1183366959}
   speed: 3
-  Panel_Win: {fileID: 0}
-  Panel_Lose: {fileID: 0}
+  Panel_Win: {fileID: 339440849}
+  Panel_Lose: {fileID: 1039203222}
 --- !u!212 &1566824835
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15105,11 +15160,11 @@ MonoBehaviour:
     Loop: 0
     VolumeSetting: {fileID: 0}
     source: {fileID: 0}
-  MasterVol: {fileID: 0}
-  BGMVol: {fileID: 0}
-  SFXVol: {fileID: 0}
-  Slider_BGM: {fileID: 0}
-  Slider_SFX: {fileID: 0}
+  MasterVol: {fileID: 24300002, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  BGMVol: {fileID: 6461924899465442920, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  SFXVol: {fileID: -8028054222948938115, guid: addbdc58ff5e00b4c877481cac2cae65, type: 2}
+  Slider_BGM: {fileID: 909359770}
+  Slider_SFX: {fileID: 909359769}
 --- !u!1 &1995080432267503985
 GameObject:
   m_ObjectHideFlags: 0

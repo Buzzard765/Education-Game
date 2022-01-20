@@ -18,9 +18,9 @@ public class QuizQuestion : MonoBehaviour
     }
 
     [SerializeField]private Image gambarSoal;
-    private Text questiontext;
-    private Text[] answerText = new Text[4];
-    private GameObject Victory;
+    [SerializeField] private Text questiontext;
+    [SerializeField] private Text[] answerText = new Text[4];
+    [SerializeField] private GameObject Victory;
 
     public List<ImgQuestion> QuestionList = new List<ImgQuestion>();
     private int index;
@@ -43,15 +43,9 @@ public class QuizQuestion : MonoBehaviour
         {
             Debug.Log("Proceeding Without Image");
         }*/
-        
-        questiontext = GameObject.Find("Question").GetComponent<Text>();
-        answerText[0] = GameObject.Find("A").GetComponent<Text>();
-        answerText[1] = GameObject.Find("B").GetComponent<Text>();
-        answerText[2] = GameObject.Find("C").GetComponent<Text>();
-        answerText[3] = GameObject.Find("D").GetComponent<Text>();
-        index = Random.Range(0, QuestionList.Count);
                 
-        Victory = GameObject.Find("Victory");
+        index = Random.Range(0, QuestionList.Count);
+                        
         Victory.SetActive(false);
     }
 
@@ -83,13 +77,13 @@ public class QuizQuestion : MonoBehaviour
     public void AnswerCheck(int answer) {
         if (QuestionList[index].answerIndex == answer)
         {
-            allAudio.PlayOneShot(SFX_Correct);
+            FindObjectOfType<AudioManager>().PlaySound("Correct");
             StartCoroutine(ButtonTransition(2f));
             
         }
         else {
             Debug.Log("Wrong Answer");
-            allAudio.PlayOneShot(SFX_Wrong);
+            FindObjectOfType<AudioManager>().PlaySound("Wrong");
         }       
     }    
         
