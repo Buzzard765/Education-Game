@@ -1786,6 +1786,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Victory
       objectReference: {fileID: 0}
+    - target: {fileID: 3871094318964894540, guid: a762a57c0fd7efc40809507d04ab8ea5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3871094318964894543, guid: a762a57c0fd7efc40809507d04ab8ea5,
         type: 3}
       propertyPath: m_Pivot.x

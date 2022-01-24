@@ -63,8 +63,9 @@ public class AudioManager : MonoBehaviour
     }
 
     void Start()
-    {
-        
+    {        
+        Slider_BGM.value = PlayerPrefs.GetFloat("BGM", Slider_BGM.value);
+        Slider_SFX.value =  PlayerPrefs.GetFloat("SFX", Slider_SFX.value);
     }
 
     // Update is called once per frame
