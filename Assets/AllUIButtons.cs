@@ -40,6 +40,6 @@ public class AllUIButtons : MonoBehaviour
     public void MainMenu() {
         Debug.Log("Heading back");
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Main Menu");
     }
 }

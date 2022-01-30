@@ -128,6 +128,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1875598519, guid: 2b2ddd9a506553e43a36730c8ed241f1, type: 3}
+      propertyPath: maxTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875598519, guid: 2b2ddd9a506553e43a36730c8ed241f1, type: 3}
+      propertyPath: minTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5348779412454028719, guid: 2b2ddd9a506553e43a36730c8ed241f1,
         type: 3}
       propertyPath: m_Name
