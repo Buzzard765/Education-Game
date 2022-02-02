@@ -18,7 +18,7 @@ public class TicTacToeController : MonoBehaviour
     int XScore, OScore;
     int drawCondiLine, drawCondiSpace;
 
-    [SerializeField] private Image WinPanel, DrawPanel;
+    [SerializeField] private RectTransform WinPanel, DrawPanel;
     [SerializeField] private Text PanelText, XScoreText, OScoreText, WinOrDraw;
 
     private AudioSource AllAudio;
@@ -75,8 +75,8 @@ public class TicTacToeController : MonoBehaviour
         {
             bool isWinner = winnerCheck();
             if (turnCount == 9 && isWinner == false) {
-                BGM.Stop();
-                AllAudio.PlayOneShot(SFX_Draw);
+                FindObjectOfType<AudioManager>().StopMusic("Level Music");
+                FindObjectOfType<AudioManager>().PlaySound("Draw");
                 DrawCheck();
             }
 
@@ -84,13 +84,13 @@ public class TicTacToeController : MonoBehaviour
        
         if (PlayerTurn == 0)
         {
-            AllAudio.PlayOneShot(SFX_O);
+            FindObjectOfType<AudioManager>().PlaySound("O Mark");
             PlayerTurn = 1;
             TurnIcon[0].SetActive(false);
             TurnIcon[1].SetActive(true);
         }
         else {
-            AllAudio.PlayOneShot(SFX_X);
+            FindObjectOfType<AudioManager>().PlaySound("X Mark");
             PlayerTurn = 0;
             TurnIcon[0].SetActive(true);
             TurnIcon[1].SetActive(false);
@@ -114,7 +114,7 @@ public class TicTacToeController : MonoBehaviour
             {
                 
                 Debug.Log("We Have a Winner: Player " + (PlayerTurn + 1) + "!");
-                WinOrDraw.text = "We Have a Winner: Player " + (PlayerTurn + 1) + "!";
+                WinOrDraw.text = "Pemenangnya Pemain " + (PlayerTurn + 1) + "!";
                 WinOrDraw.gameObject.SetActive(true);
                 DisplayWinner(i);
                 return true;
@@ -127,35 +127,36 @@ public class TicTacToeController : MonoBehaviour
     }
 
     void DrawCheck() {
-        /*if (drawCondiSpace > 8 && drawCondiLine == 40) {
-            
-        }*/
-        DrawPanel.gameObject.SetActive(true);  
+        Vector3 PanelPos = DrawPanel.GetComponent<RectTransform>().anchoredPosition;
+        DrawPanel.gameObject.SetActive(true);
+        LeanTween.move
+               (DrawPanel, new Vector3(PanelPos.x, PanelPos.y - 1100, PanelPos.z), 2f)
+               .setEaseOutBounce();
     }
 
     void DisplayWinner(int LineIndex) {
-        Vector3 PanelPos = WinPanel.transform.position;
+        Vector3 PanelPos = WinPanel.GetComponent<RectTransform>().anchoredPosition;
         FindObjectOfType<AudioManager>().StopMusic("Level Music");
         FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
-
+        Image PanelColor = WinPanel.gameObject.GetComponent<Image>();
         WinningLine[LineIndex].SetActive(true);
         WinPanel.gameObject.SetActive(true);
         if (PlayerTurn == 0)
-        {
-            Color Red = new Color(1, 0.8f, 0.8f, 1);
+        {           
+            Color Blue = new Color(0.8f, 0.8f, 1f, 1f);
             OScore++;
             OScoreText.text = OScore.ToString();
-            WinPanel.color = Red;
+            PanelColor.color = Blue; 
         }
         else if (PlayerTurn == 1)
         {
-            Color Blue = new Color(0.8f, 0.8f, 1f, 1f);
+            Color Red = new Color(1, 0.8f, 0.8f, 1);
             XScore++;
-            XScoreText.text = OScore.ToString();                      
-            WinPanel.color = Blue;
+            XScoreText.text = OScore.ToString();
+            PanelColor.color = Red;
         }
         LeanTween.move
-               (WinPanel.gameObject, new Vector3(PanelPos.x, PanelPos.y - 1100, PanelPos.z), 2f)
+               (WinPanel, new Vector3(PanelPos.x, PanelPos.y - 1100, PanelPos.z), 2f)
                .setEaseOutBounce();
     }
 
@@ -179,7 +180,7 @@ public class TicTacToeController : MonoBehaviour
         }
     }
 
-    public void Rematch(GameObject Panel) {
+    public void Rematch(RectTransform Panel) {
         
         FindObjectOfType<AudioManager>().PlayMusic("Level Music");
         
@@ -211,13 +212,13 @@ public class TicTacToeController : MonoBehaviour
         StartCoroutine(ReturnPanel(Panel));
     }
 
-    IEnumerator ReturnPanel(GameObject Panel) {
+    IEnumerator ReturnPanel(RectTransform Panel) {
         
-        Vector3 PanelPos = Panel.transform.position;
+        Vector3 PanelPos = Panel.GetComponent<RectTransform>().anchoredPosition;
         LeanTween.move
-                (Panel.gameObject, new Vector3(PanelPos.x, PanelPos.y + 1100, PanelPos.z), 1f);
+                (Panel, new Vector3(PanelPos.x, PanelPos.y + 1100, PanelPos.z), 1f);
         yield return new WaitForSeconds(2f);
-        Panel.SetActive(false);
+        Panel.gameObject.SetActive(false);
         StopCoroutine(ReturnPanel(Panel));
     }
 }

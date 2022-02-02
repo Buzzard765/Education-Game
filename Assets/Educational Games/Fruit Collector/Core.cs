@@ -14,7 +14,7 @@ namespace Manager {
         public int score, highscore;
 
         public Text TimeText, ScoreText, HighscoreText;
-        [SerializeField]private GameObject Panel;
+        [SerializeField]private RectTransform Panel;
         public bool onPlay = true;
         private void OnEnable()
         {
@@ -32,7 +32,7 @@ namespace Manager {
             timer.startTimer(limit);
             FindObjectOfType<AudioManager>().PlayMusic("Level Music");
             
-            Panel.SetActive(false);
+            Panel.gameObject.SetActive(false);
         }
         
         // Update is called once per frame
@@ -45,10 +45,11 @@ namespace Manager {
         private void rewriteScore()
         {
             onPlay = false;
-            Vector3 PanelPos = Panel.transform.position;
+            Vector3 PanelPos = Panel.GetComponent<RectTransform>().anchoredPosition;
+            float startPosY = PanelPos.y;
             FindObjectOfType<AudioManager>().StopMusic("Level Music");
-            Panel.SetActive(true);
-            LeanTween.move(Panel, new Vector3(PanelPos.x, PanelPos.y - 1100f, PanelPos.z), 1f).setEaseOutBounce();
+            Panel.gameObject.SetActive(true);
+            LeanTween.move(Panel, new Vector3(PanelPos.x, PanelPos.y - (startPosY), PanelPos.z), 1f).setEaseOutBounce();
             if (score > highscore)
             {
                 highscore = score;

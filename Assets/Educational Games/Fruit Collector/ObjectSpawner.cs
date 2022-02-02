@@ -7,13 +7,15 @@ public class ObjectSpawner : MonoBehaviour
 {
     public GameObject fruits, trash;
     public GameObject[] trees;
-    public float spawnrate;
+    [SerializeField]private float spawnrate;
+    private float setSpawnRate;
     public Core GameManager;
     
     // Start is called before the first frame update
     void Start()
     {
         GameManager = GameObject.Find("GameManager").GetComponent<Core>();
+        setSpawnRate = 1;
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class ObjectSpawner : MonoBehaviour
         int drops;
 
         if (GameManager.onPlay == true) {
-            if (spawnrate <= 0)
+            if (setSpawnRate <= 0)
             {
 
                 drops = Random.Range(0, 4);
@@ -46,11 +48,11 @@ public class ObjectSpawner : MonoBehaviour
                 {
                     Instantiate(trash, trees[Random.Range(0, trees.Length - 1)].transform.position + new Vector3(Random.Range(-5, 5), 0, 0), Quaternion.identity);
                 }
-                spawnrate = Random.Range(spawnrate, spawnrate + 4);
+                setSpawnRate = Random.Range(spawnrate - 1, spawnrate + 1);
             }
             else
             {
-                spawnrate -= Time.deltaTime;
+                setSpawnRate -= Time.deltaTime;
             }
         }
               

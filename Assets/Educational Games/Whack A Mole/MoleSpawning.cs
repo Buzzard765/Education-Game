@@ -17,13 +17,13 @@ public class MoleSpawning : MonoBehaviour
     //public Transform[] hole;
     //public bool hasMole;
     public List<Mole> AllHoles = new List<Mole>();
-    public float spawnRate;
+    [SerializeField] private float spawnRate;   
     private float currentspawnRate;
     private int randomSpot;
 
     [SerializeField] private int score;
     [SerializeField] private float timeLimit;
-    [SerializeField] GameObject Panel;
+    [SerializeField] RectTransform Panel;
     [SerializeField] Text ScoreText, TimeText, ResultText;
 
     public float time_get {
@@ -49,13 +49,13 @@ public class MoleSpawning : MonoBehaviour
     void Start()
     {
         FindObjectOfType<AudioManager>().PlayMusic("Level Music");
-        currentspawnRate = spawnRate;
+        currentspawnRate = 1;
         randomSpot = Random.Range(0, AllHoles.Count);
         foreach (Mole holes in AllHoles) {
             holes.MoleState = Mole.states.inGround;
         }
         timer.startTimer(timeLimit);
-        Panel.SetActive(false);
+        Panel.gameObject.SetActive(false);
         //TimeText = GameObject.Find("Time").GetComponent<Text>();
     }
 
@@ -101,13 +101,14 @@ public class MoleSpawning : MonoBehaviour
     }
 
     IEnumerator ResultBGMs() {
-        Panel.SetActive(true);
-        Vector3 PanelPos = Panel.transform.position;
+        Panel.gameObject.SetActive(true);
+        Vector3 PanelPos = Panel.GetComponent<RectTransform>().anchoredPosition;
+        float startPosY = PanelPos.y;
         FindObjectOfType<AudioManager>().StopMusic("Level Music");
         FindObjectOfType<AudioManager>().PlayMusic("Whistle");       
         yield return new WaitForSeconds(2f);
 
-        LeanTween.move(Panel, new Vector3(PanelPos.x, PanelPos.y - 1100f, PanelPos.z), 1f).setEaseOutBounce();
+        LeanTween.move(Panel, new Vector3(PanelPos.x, PanelPos.y - (startPosY), PanelPos.z), 1f).setEaseOutBounce();
         ResultText.text = "Skor yang didapat: \n" + score;
         FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
 

@@ -1245,10 +1245,10 @@ RectTransform:
   m_Father: {fileID: 1952432230}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 972}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 970}
+  m_SizeDelta: {x: 1920, y: 959.99994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &339440851
 MonoBehaviour:
@@ -2014,7 +2014,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -7842,32 +7842,32 @@ PrefabInstance:
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 959.99994
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
@@ -7912,7 +7912,7 @@ PrefabInstance:
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 972
+      value: 970
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
@@ -7931,12 +7931,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 669aa514a63d73940ac6532576e588e2, type: 3}
---- !u!1 &1039203222 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7165511943690335780, guid: 669aa514a63d73940ac6532576e588e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1039203221}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1060656980
 GameObject:
   m_ObjectHideFlags: 0
@@ -12302,8 +12296,8 @@ MonoBehaviour:
   rb2d: {fileID: 0}
   js: {fileID: 1183366959}
   speed: 3
-  Panel_Win: {fileID: 339440849}
-  Panel_Lose: {fileID: 1039203222}
+  Panel_Win: {fileID: 339440850}
+  Panel_Lose: {fileID: 1404712610}
 --- !u!212 &1566824835
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12662,7 +12656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -15399,7 +15393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

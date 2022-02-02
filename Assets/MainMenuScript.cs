@@ -39,20 +39,20 @@ public class MainMenuScript : AllUIButtons
         SceneManager.LoadSceneAsync(name);
     }
 
-    public void leanTweenSlide(GameObject Panel) {
-        LeanTween.cancel(Panel);
-        Vector3 StartPos = Panel.transform.position;
-        if (Panel.activeSelf == false)
+    public void leanTweenSlide(RectTransform Panel) {
+        
+        Vector3 StartPos = Panel.GetComponent<RectTransform>().anchoredPosition;
+        if (Panel.gameObject.activeSelf == false)
         {
-            Panel.SetActive(true);
+            Panel.gameObject.SetActive(true);
             LeanTween.move
-                (Panel, new Vector3(StartPos.x, StartPos.y - 1200f, Panel.transform.position.z), 0.5f)
+                (Panel, new Vector3(StartPos.x, StartPos.y - 1200f, StartPos.z), 0.5f)
                 .setEaseOutBounce();
            
         }
         else {
-            LeanTween.move(Panel, new Vector3(Panel.transform.position.x, Panel.transform.position.y + 1200f, Panel.transform.position.z), 0.5f);
-            Panel.SetActive(false);
+            LeanTween.move(Panel, new Vector3(StartPos.x, StartPos.y + 1200f, StartPos.z), 0.5f);
+            Panel.gameObject.SetActive(false);
             //Panel.LeanMove(new Vector3(StartPos.x, StartPos.y + 1200f, Panel.transform.position.z), 0.5f);
 
         }

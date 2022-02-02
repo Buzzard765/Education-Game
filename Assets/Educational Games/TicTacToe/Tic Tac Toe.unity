@@ -366,7 +366,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Berhenti
 --- !u!222 &187521596
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -742,8 +742,8 @@ MonoBehaviour:
         m_MethodName: Rematch
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 193676257}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 193676258}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1507,8 +1507,8 @@ MonoBehaviour:
         m_MethodName: Rematch
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 800230675}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 800230676}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2615,8 +2615,8 @@ MonoBehaviour:
   - {fileID: 430137863}
   XPlayer: {fileID: 1415253232}
   OPlayer: {fileID: 812942335}
-  WinPanel: {fileID: 800230677}
-  DrawPanel: {fileID: 193676259}
+  WinPanel: {fileID: 800230676}
+  DrawPanel: {fileID: 193676258}
   PanelText: {fileID: 1696829804}
   XScoreText: {fileID: 1458943212}
   OScoreText: {fileID: 687797244}
@@ -3936,7 +3936,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: It's a Tie!
+  m_Text: Seri!
 --- !u!222 &1492159887
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4357,7 +4357,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Ulang
 --- !u!222 &1629357778
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4711,7 +4711,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Berhenti
 --- !u!222 &1838836242
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5142,7 +5142,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Ulang
 --- !u!222 &2145004852
 CanvasRenderer:
   m_ObjectHideFlags: 0

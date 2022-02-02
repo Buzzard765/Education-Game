@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
     public Joystick js;
     public float speed;
 
-    [SerializeField]private GameObject Panel_Win, Panel_Lose;
+    [SerializeField]private RectTransform Panel_Win, Panel_Lose;
 
     private Animator animator;
     // Start is called before the first frame update
@@ -53,14 +53,14 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector3 PanelPos = Panel_Lose.transform.position;
+        Vector3 PanelPos = Panel_Win.GetComponent<RectTransform>().anchoredPosition;
         if (collision.gameObject.CompareTag("Key")) {
             hasKey ++;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Wrong")) {
             lose = true;
-            Panel_Lose.SetActive(true);
+            Panel_Lose.gameObject.SetActive(true);
             FindObjectOfType<AudioManager>().StopMusic("Level Music");
             FindObjectOfType<AudioManager>().PlayMusic("Stage Failed");
             LeanTween.move(Panel_Lose, new Vector3(PanelPos.x, PanelPos.y - 1100f, PanelPos.z), 1f).setEaseOutBounce();
@@ -77,13 +77,13 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Vector3 PanelPos = Panel_Lose.transform.position;
+        Vector3 PanelPos = Panel_Win.GetComponent<RectTransform>().anchoredPosition;
         if (collision.gameObject.name.Contains("Goal")) {
             Debug.Log("Cleared");
             FindObjectOfType<AudioManager>().StopMusic("Level Music");
             FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
-            Panel_Win.SetActive(true);
-            LeanTween.move(Panel_Lose, new Vector3(PanelPos.x, PanelPos.y - 1100f, PanelPos.z), 1f).setEaseOutBounce();
+            Panel_Win.gameObject.SetActive(true);
+            LeanTween.move(Panel_Win, new Vector3(PanelPos.x, PanelPos.y - 970f, PanelPos.z), 1f).setEaseOutBounce();
         }
     }
 }
