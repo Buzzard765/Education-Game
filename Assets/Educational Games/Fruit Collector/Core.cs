@@ -31,15 +31,17 @@ namespace Manager {
             
             timer.startTimer(limit);
             FindObjectOfType<AudioManager>().PlayMusic("Level Music");
-            
+            highscore = PlayerPrefs.GetInt("highscore", highscore);
             Panel.gameObject.SetActive(false);
         }
         
         // Update is called once per frame
         void Update()
         {
-            ScoreText.text = "Score : " + score.ToString();
-
+            ScoreText.text = "Skor : " + score.ToString();
+            if (score < 0) {
+                score = 0;
+            }
         }
 
         private void rewriteScore()
@@ -55,12 +57,13 @@ namespace Manager {
                 highscore = score;
                 PlayerPrefs.SetInt("highscore", score);
                 FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
-                HighscoreText.text = "New Highscore!\n" + highscore.ToString();
+                HighscoreText.text = "Rekor Baru!\n Nilai yang didapat: \n" + highscore.ToString();
             }
             else
             {
                 FindObjectOfType<AudioManager>().PlayMusic("Stage Failed");
-                HighscoreText.text = "Highscore:\n" + highscore.ToString();
+               
+                HighscoreText.text = "Nilai terakhir:\n" + highscore.ToString();
             }
         }
     }

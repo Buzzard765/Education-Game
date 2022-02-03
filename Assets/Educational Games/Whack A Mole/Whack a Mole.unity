@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6a404b5fc5146d4085325251e8fb260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Limit: 30
+  Limit: 60
 --- !u!114 &1104938952 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1875598519, guid: 2b2ddd9a506553e43a36730c8ed241f1,

@@ -21,7 +21,7 @@ public class MoleSpawning : MonoBehaviour
     private float currentspawnRate;
     private int randomSpot;
 
-    [SerializeField] private int score;
+    [SerializeField] private int score, highscore;
     [SerializeField] private float timeLimit;
     [SerializeField] RectTransform Panel;
     [SerializeField] Text ScoreText, TimeText, ResultText;
@@ -55,6 +55,7 @@ public class MoleSpawning : MonoBehaviour
             holes.MoleState = Mole.states.inGround;
         }
         timer.startTimer(timeLimit);
+        highscore = PlayerPrefs.GetInt("highscore", highscore);
         Panel.gameObject.SetActive(false);
         //TimeText = GameObject.Find("Time").GetComponent<Text>();
     }
@@ -94,13 +95,23 @@ public class MoleSpawning : MonoBehaviour
         AllHoles[index].MoleState = Mole.states.OutGround;
     }
 
-    void Result(){
+    void Result()
+    {
 
         StartCoroutine(ResultBGMs());
-        
+        if (score > highscore)
+        {
+            highscore = score;
+            PlayerPrefs.SetInt("highscore", score);
+            ResultText.text = "Rekor baru! \n Nilai Tertinggi: \n" + score.ToString();
+        }
+        else
+        {
+            ResultText.text = "Nilai yang Terakhir: \n" + score.ToString();
+        }
     }
 
-    IEnumerator ResultBGMs() {
+     IEnumerator ResultBGMs() {
         Panel.gameObject.SetActive(true);
         Vector3 PanelPos = Panel.GetComponent<RectTransform>().anchoredPosition;
         float startPosY = PanelPos.y;
@@ -109,7 +120,7 @@ public class MoleSpawning : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         LeanTween.move(Panel, new Vector3(PanelPos.x, PanelPos.y - (startPosY), PanelPos.z), 1f).setEaseOutBounce();
-        ResultText.text = "Skor yang didapat: \n" + score;
+        
         FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
 
     }

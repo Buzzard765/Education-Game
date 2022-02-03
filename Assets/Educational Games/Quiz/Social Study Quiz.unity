@@ -1924,7 +1924,7 @@ MonoBehaviour:
     - content: Kakak dan Adik
     - content: Paman dan Bibi
     answerIndex: 1
-  - gambar: {fileID: 0}
+  - gambar: {fileID: 21300000, guid: 2841620790ed32242a8332a152472619, type: 3}
     QuestionContent: Alamat disebut juga ....
     answers:
     - content: Tempat kerja
@@ -1965,7 +1965,7 @@ MonoBehaviour:
     - content: paman
     - content: nenek
     answerIndex: 2
-  - gambar: {fileID: 0}
+  - gambar: {fileID: 21300000, guid: 82bd5040c1525a44eb2ab65d5660a635, type: 3}
     QuestionContent: Kerukunan bisa diterapkan di ....
     answers:
     - content: rumah

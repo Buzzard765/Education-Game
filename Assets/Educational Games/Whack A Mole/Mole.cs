@@ -71,7 +71,7 @@ public class Mole : MonoBehaviour
             AllAudio.PlayOneShot(SFX_Knock);
             StartCoroutine(KnockOut());
             FindObjectOfType<MoleSpawning>().score_get += 1;
-            FindObjectOfType<Timer>().Add(3);
+            FindObjectOfType<Timer>().Add(2);
             onGround = false;
             
         }
