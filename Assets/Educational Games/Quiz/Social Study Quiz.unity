@@ -1343,7 +1343,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1961,7 +1961,7 @@ MonoBehaviour:
   - {fileID: 832027660}
   - {fileID: 859627772}
   - {fileID: 133804075}
-  Victory: {fileID: 1897675414}
+  victory: {fileID: 1897675414}
   QuestionList:
   - gambar: {fileID: 21300000, guid: 9c8ea47c5ef5d6d4ba88d46369926fe1, type: 3}
     QuestionContent: Setiap Orang pasti memiliki...
@@ -2060,6 +2060,19 @@ MonoBehaviour:
     - content: terhitung
     - content: A & C Benar
     answerIndex: 1
+  Questions:
+  - {fileID: 11400000, guid: 1ef948b36208fc242a172b693bec2f37, type: 2}
+  - {fileID: 11400000, guid: 388e93eb87aca3b46a112186c899565e, type: 2}
+  - {fileID: 11400000, guid: f1485ad05fb5ff0428f5f31b9ffaa9be, type: 2}
+  - {fileID: 11400000, guid: c104374cf4aa5114da7e00e668cb63e2, type: 2}
+  - {fileID: 11400000, guid: 67c955dd14e70f7498ac97b82948bd78, type: 2}
+  - {fileID: 11400000, guid: 82f57e9041d237d47968ba673ab9d9c0, type: 2}
+  - {fileID: 11400000, guid: a50354f88c989b343a7b71d6f626078e, type: 2}
+  - {fileID: 11400000, guid: bf419ab959618f543b5e44e3bc6fe1b7, type: 2}
+  - {fileID: 11400000, guid: 08f975e565401964b92277700f50d59d, type: 2}
+  - {fileID: 11400000, guid: b9a54b47e67d9d143bca418a418f2d99, type: 2}
+  - {fileID: 11400000, guid: dc678a13ea123a7438d91e57c3e48304, type: 2}
+  - {fileID: 11400000, guid: 8549475fe87fa574183e27fd8ed1be24, type: 2}
   AnswerChoices:
   - {fileID: 2085455764}
   - {fileID: 917039113}

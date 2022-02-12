@@ -1344,7 +1344,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1922,7 +1922,7 @@ MonoBehaviour:
   - {fileID: 832027660}
   - {fileID: 859627772}
   - {fileID: 133804075}
-  Victory: {fileID: 45367444}
+  victory: {fileID: 45367444}
   QuestionList:
   - gambar: {fileID: 21300000, guid: 4919bf1bdfb64344eaa19771672ac396, type: 3}
     QuestionContent: 'In English : Selamat pagi'
@@ -2024,6 +2024,19 @@ MonoBehaviour:
     - content: Yes it isn't
     - content: I don't know
     answerIndex: 1
+  Questions:
+  - {fileID: 11400000, guid: 1db130c00d408b14f952ebbea15c1cf1, type: 2}
+  - {fileID: 11400000, guid: 46814269d9150e248ba3c04e119351c2, type: 2}
+  - {fileID: 11400000, guid: b20caa26a81bfc84da84802a3d269b9e, type: 2}
+  - {fileID: 11400000, guid: 3d534b7e6337e3341927ec8d268f902d, type: 2}
+  - {fileID: 11400000, guid: aef3b0128842c124eb14cc8cc0823cc0, type: 2}
+  - {fileID: 11400000, guid: 2e84b89ac23771445b2ab9db145ec383, type: 2}
+  - {fileID: 11400000, guid: 0bee1b150a410e746b07bdc4777a8c04, type: 2}
+  - {fileID: 11400000, guid: 85fc554137b2a174f93e3cc4515093ed, type: 2}
+  - {fileID: 11400000, guid: 141f3d275c56cd7408eedd5fa6fc99c8, type: 2}
+  - {fileID: 11400000, guid: 6e96c5315105bf943ba2ab89e646cb87, type: 2}
+  - {fileID: 11400000, guid: ead42a8bcd5477e46956c5a11a6ae240, type: 2}
+  - {fileID: 11400000, guid: 6820fe79348859b45a959a9d643f7440, type: 2}
   AnswerChoices:
   - {fileID: 2085455764}
   - {fileID: 917039113}

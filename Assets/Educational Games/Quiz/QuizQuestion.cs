@@ -65,7 +65,7 @@ public class QuizQuestion : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().PlaySound("Correct");
             StartCoroutine(ButtonTransition(2f));
-            NextRandomQuestion();
+            
         }
         else 
         {
@@ -85,7 +85,7 @@ public class QuizQuestion : MonoBehaviour
         Questions.RemoveAt(index);
         
         index = Random.Range(0, Questions.Count);
-            
+
         SetQuestion();
     }
 
@@ -128,5 +128,6 @@ public class QuizQuestion : MonoBehaviour
         {
             AnswerChoices[i].interactable = true    ;
         }
+        NextRandomQuestion();
     }
 }

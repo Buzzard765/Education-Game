@@ -1732,7 +1732,7 @@ MonoBehaviour:
   - QuestionContent: Bola-bola Kecil yang paling ringan
     answerIndex: 7
   - QuestionContent: Bola yang tidak bulat
-    answerIndex: 0
+    answerIndex: 6
   - QuestionContent: Bola berbahan plastik
     answerIndex: 7
   - QuestionContent: Bola Berlubang

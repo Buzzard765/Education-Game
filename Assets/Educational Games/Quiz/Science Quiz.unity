@@ -832,7 +832,7 @@ MonoBehaviour:
   - {fileID: 832027660}
   - {fileID: 859627772}
   - {fileID: 133804075}
-  Victory: {fileID: 3871094318218301725}
+  victory: {fileID: 3871094318218301725}
   QuestionList:
   - gambar: {fileID: 21300000, guid: 9916d652936d860439806210d4073ac8, type: 3}
     QuestionContent: Lidah kita berguna untuk
@@ -930,6 +930,19 @@ MonoBehaviour:
     - content: Basah
     - content: Semua salah
     answerIndex: 1
+  Questions:
+  - {fileID: 11400000, guid: 068cd7e8219c3de46897438a1b355765, type: 2}
+  - {fileID: 11400000, guid: fbdbcdfef95aa414791f578783c2d599, type: 2}
+  - {fileID: 11400000, guid: 666cfc2c3b81dce418cbb32ea6cc5c6c, type: 2}
+  - {fileID: 11400000, guid: b1fd32bac2161be4aa16836eec2f10d3, type: 2}
+  - {fileID: 11400000, guid: 336e79f3c0e11b345a5d02e61a921d05, type: 2}
+  - {fileID: 11400000, guid: 2e8d281fb0634e048b710abb628b24ab, type: 2}
+  - {fileID: 11400000, guid: d2f0d4dbe24899a44b0f28ce1991c206, type: 2}
+  - {fileID: 11400000, guid: 4f8f114845e74954aae7a04562623028, type: 2}
+  - {fileID: 11400000, guid: d771aa4ac68de27468f6d1fd69ac4751, type: 2}
+  - {fileID: 11400000, guid: 96b330a472a3e4848ab7f5a42f04bbdd, type: 2}
+  - {fileID: 11400000, guid: 2317925e2d49b7a42b3ba0342db813ff, type: 2}
+  - {fileID: 11400000, guid: 7e9659e413b85494d9ee9c2042d9b7ff, type: 2}
   AnswerChoices:
   - {fileID: 2085455764}
   - {fileID: 917039113}
