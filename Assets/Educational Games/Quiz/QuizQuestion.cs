@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Utility;
+
 public class QuizQuestion : MonoBehaviour
 {
 
@@ -12,17 +15,19 @@ public class QuizQuestion : MonoBehaviour
         public List<Answer> answers = new List<Answer>();
         public int answerIndex;
     }
+    
     [System.Serializable]
     public class Answer {
         public string content;
     }
 
-    [SerializeField]private Image gambarSoal;
+    [SerializeField] private Image gambarSoal;
     [SerializeField] private Text questiontext;
     [SerializeField] private Text[] answerText = new Text[4];
-    [SerializeField] private GameObject Victory;
+    [FormerlySerializedAs("Victory")] [SerializeField] private GameObject victory;
 
     public List<ImgQuestion> QuestionList = new List<ImgQuestion>();
+    public List<QuestionObject> Questions = new List<QuestionObject>();
     private int index;
     [SerializeField] Button[] AnswerChoices;
 
@@ -44,61 +49,72 @@ public class QuizQuestion : MonoBehaviour
             Debug.Log("Proceeding Without Image");
         }*/
                 
-        index = Random.Range(0, QuestionList.Count);
+        index = Random.Range(0, Questions.Count);
                         
-        Victory.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //FindObjectOfType<AudioManager>().PlayMusic("Level Music");
-        if (QuestionList.Count > 0)
-        {
-            questiontext.text = QuestionList[index].QuestionContent;
-            try {
-                gambarSoal.sprite = QuestionList[index].gambar;
-            } catch {
-                Debug.Log("Proceeding Without Image");
-            }           
-            
-            for (int i = 0; i < answerText.Length; i++) {
-                answerText[i].text = QuestionList[index].answers[i].content;
-            }
-        }
-        else
-        {
-            Victory.SetActive(true);          
-        }
+        victory.SetActive(false);
         
+        NextRandomQuestion();
     }
 
 
-    public void AnswerCheck(int answer) {
-        if (QuestionList[index].answerIndex == answer)
+    public void AnswerCheck(int answer)
+    {
+        bool isCorrect = Questions[index].answerIndex == answer;
+        
+        if (isCorrect)
         {
             FindObjectOfType<AudioManager>().PlaySound("Correct");
             StartCoroutine(ButtonTransition(2f));
-            
+            NextRandomQuestion();
         }
-        else {
+        else 
+        {
             Debug.Log("Wrong Answer");
             FindObjectOfType<AudioManager>().PlaySound("Wrong");
         }       
     }    
         
-    void nextRandomQuestion()
-    {                      
-        if (QuestionList.Count > 0)
+    void NextRandomQuestion()
+    {
+        if (Questions.Count <= 1)
         {
-            QuestionList.RemoveAt(index);
-            if (QuestionList.Count <= 0) {
-                Debug.Log("Quiz Over");
-                FindObjectOfType<AudioManager>().StopMusic("Level Music");
-                FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");  
-            }
-        }         
-        index = Random.Range(0, QuestionList.Count);
+            StopQuiz();
+            return;
+        }
+        
+        Questions.RemoveAt(index);
+        
+        index = Random.Range(0, Questions.Count);
+            
+        SetQuestion();
+    }
+
+    void SetQuestion()
+    {
+        var question = Questions[index];
+        questiontext.text = question.QuestionContent;
+
+        if (question is ImageQuestionObject imageQuestion)
+        {
+            gambarSoal.sprite = imageQuestion.gambar;
+        }
+        else if (question is SoundQuestionObject soundQuestion)
+        {
+            FindObjectOfType<AudioManager>().PlaySound(soundQuestion.soundId);
+        }
+        else Debug.Log("Proceeding Without Image");
+
+        for (int i = 0; i < answerText.Length; i++) {
+            answerText[i].text = question.answers[i].content;
+        }
+    }
+
+    void StopQuiz()
+    {
+        Debug.Log("Quiz Over");
+        FindObjectOfType<AudioManager>().StopMusic("Level Music");
+        FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");  
+        victory.SetActive(true);  
     }
 
     IEnumerator ButtonTransition(float delay)
@@ -112,6 +128,5 @@ public class QuizQuestion : MonoBehaviour
         {
             AnswerChoices[i].interactable = true    ;
         }
-        nextRandomQuestion();
     }
 }
