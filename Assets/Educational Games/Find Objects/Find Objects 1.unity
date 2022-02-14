@@ -290,7 +290,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 2ab77499624e1b5428a4dbc96202a974, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -341,8 +341,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 290.9, y: -114.9}
-  m_SizeDelta: {x: 413.71558, y: 259.82788}
+  m_AnchoredPosition: {x: 253.8, y: -138.3}
+  m_SizeDelta: {x: 414.56433, y: 306.69092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &154577774
 MonoBehaviour:
@@ -470,8 +470,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -206.11, y: -229}
-  m_SizeDelta: {x: 175.14325, y: 175.14325}
+  m_AnchoredPosition: {x: -194.86, y: -227.36}
+  m_SizeDelta: {x: 168.88953, y: 128.56152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &244993706
 MonoBehaviour:
@@ -847,8 +847,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -657, y: 19.3}
-  m_SizeDelta: {x: 235.80096, y: 183.73984}
+  m_AnchoredPosition: {x: -571.4, y: 19.3}
+  m_SizeDelta: {x: 196.1394, y: 183.73984}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477847532
 MonoBehaviour:
@@ -1065,8 +1065,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -417.08, y: -99}
-  m_SizeDelta: {x: 122.75647, y: 128.159}
+  m_AnchoredPosition: {x: -355.6, y: -99}
+  m_SizeDelta: {x: 118.37331, y: 128.159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706020711
 MonoBehaviour:
@@ -1272,8 +1272,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -177.65, y: 92.2}
-  m_SizeDelta: {x: 320.45593, y: 282.25455}
+  m_AnchoredPosition: {x: -124.8, y: 80.379}
+  m_SizeDelta: {x: 309.01367, y: 305.8972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &893161687
 MonoBehaviour:
@@ -1586,8 +1586,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -492.3, y: 247.1}
-  m_SizeDelta: {x: 308.91934, y: 271.93225}
+  m_AnchoredPosition: {x: -417.9, y: 253.54}
+  m_SizeDelta: {x: 277.19296, y: 284.81775}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117120223
 MonoBehaviour:
@@ -1710,33 +1710,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scenery: {fileID: 0}
-  QuestionList:
-  - QuestionContent: Bola yang mirip tali sepatu
-    answerIndex: 0
-  - QuestionContent: Bola dengan warna jeruk
-    answerIndex: 1
-  - QuestionContent: Bola kecil terbuat dari kulit
-    answerIndex: 2
-  - QuestionContent: 'Bola dengan corak kulit-nya seperti
-
-      cangkang Kura-Kura'
-    answerIndex: 3
-  - QuestionContent: Bola dengan warna Sapi
-    answerIndex: 4
-  - QuestionContent: Bola kecil dengan warna pisang
-    answerIndex: 5
-  - QuestionContent: Bola kecil yang bisa melayang paling jauh
-    answerIndex: 8
-  - QuestionContent: Bola dengan permukaan seperti bungkusan perban
-    answerIndex: 9
-  - QuestionContent: Bola-bola Kecil yang paling ringan
-    answerIndex: 7
-  - QuestionContent: Bola yang tidak bulat
-    answerIndex: 6
-  - QuestionContent: Bola berbahan plastik
-    answerIndex: 7
-  - QuestionContent: Bola Berlubang
-    answerIndex: 8
   questiontext: {fileID: 802184803}
   Victory: {fileID: 1850812221}
   AnswerChoices:
@@ -1750,6 +1723,19 @@ MonoBehaviour:
   - {fileID: 244993706}
   - {fileID: 2089736650}
   - {fileID: 1117120223}
+  QuestionList:
+  - {fileID: 11400000, guid: 2c00e1865965e5346b4b4254de0daf89, type: 2}
+  - {fileID: 11400000, guid: 45a42a8a41946f64981036e4040dc4dd, type: 2}
+  - {fileID: 11400000, guid: 52bb42c0944f5104b9eafcb38fceb772, type: 2}
+  - {fileID: 11400000, guid: d25b0317b96cdc0449ec49a2be515605, type: 2}
+  - {fileID: 11400000, guid: e7131b8b90681bc40a526663947e3981, type: 2}
+  - {fileID: 11400000, guid: 013543b67a7c5204dbff13731f5a0d52, type: 2}
+  - {fileID: 11400000, guid: 6744f1daa074f2743a52037d476a053f, type: 2}
+  - {fileID: 11400000, guid: 7eaae4a4e154f7c44a744a24fddd57ab, type: 2}
+  - {fileID: 11400000, guid: 9b186e4863961c9469d294809ca8d87c, type: 2}
+  - {fileID: 11400000, guid: c2867c6e1fe3a084ea8c118d06e57d4b, type: 2}
+  - {fileID: 11400000, guid: f6baf0cbe1e6630468251fa5c96b16fb, type: 2}
+  - {fileID: 11400000, guid: c475035593d2b78489f8595e200e70ac, type: 2}
 --- !u!4 &1458070667
 Transform:
   m_ObjectHideFlags: 0
@@ -1951,8 +1937,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 528.3, y: 149.49}
-  m_SizeDelta: {x: 455.96155, y: 268.96033}
+  m_AnchoredPosition: {x: 545.32, y: 149.49}
+  m_SizeDelta: {x: 439.68085, y: 268.96033}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1951353014
 MonoBehaviour:
@@ -2080,8 +2066,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 135.94, y: 262}
-  m_SizeDelta: {x: 306.7168, y: 267.914}
+  m_AnchoredPosition: {x: 177.6, y: 228.8}
+  m_SizeDelta: {x: 295.76508, y: 334.3034}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991749504
 MonoBehaviour:
@@ -2209,8 +2195,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.071, y: -312}
-  m_SizeDelta: {x: 90.14288, y: 92.202545}
+  m_AnchoredPosition: {x: -31, y: -315}
+  m_SizeDelta: {x: 86.924225, y: 92.202545}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2089736650
 MonoBehaviour:
@@ -2338,8 +2324,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -152.5, y: 411.99}
-  m_SizeDelta: {x: 282.35672, y: 255.99469}
+  m_AnchoredPosition: {x: -100.6, y: 411.99}
+  m_SizeDelta: {x: 272.2748, y: 255.99469}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2114493942
 MonoBehaviour:

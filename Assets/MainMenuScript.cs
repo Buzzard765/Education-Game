@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : AllUIButtons
 {
+    [SerializeField] List<GameObject> Panel = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,13 @@ public class MainMenuScript : AllUIButtons
     {
         Debug.Log("Loading Level" + levelname);
         StartCoroutine(LoadLevel(levelname));
+    }
+
+    public void SwitchPanel(int index) {
+        for (int i = 0; i < Panel.Count; i++) {
+            var PanelIndex = Panel[i];
+            PanelIndex.SetActive(i == index);
+        }        
     }
 
     IEnumerator LoadLevel(string name) {

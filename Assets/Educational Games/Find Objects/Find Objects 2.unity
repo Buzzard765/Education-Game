@@ -132,10 +132,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1745553295}
-    - target: {fileID: 9159725904541932, guid: 92391ad90ba1b094db3e41c03a867852, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
     - target: {fileID: 9159725904541933, guid: 92391ad90ba1b094db3e41c03a867852, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -162,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9159725904541933, guid: 92391ad90ba1b094db3e41c03a867852, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.87301767
+      value: 0.8455743
       objectReference: {fileID: 0}
     - target: {fileID: 9159725904541933, guid: 92391ad90ba1b094db3e41c03a867852, type: 3}
       propertyPath: m_SizeDelta.x
@@ -280,10 +276,10 @@ RectTransform:
   m_Father: {fileID: 944677541}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.3168, y: 78.2}
-  m_SizeDelta: {x: 1623.7981, y: 1003.37695}
+  m_AnchorMin: {x: 0.12522222, y: 0.080000006}
+  m_AnchorMax: {x: 0.87500006, y: 1}
+  m_AnchoredPosition: {x: -1.8167725, y: 37.69998}
+  m_SizeDelta: {x: 4.7980957, y: 72.37695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &82342292
 MonoBehaviour:
@@ -306,7 +302,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 51f7ad77e370d584c9ce98e7c5b14756, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1894,7 +1890,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2663,31 +2659,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scenery: {fileID: 0}
-  QuestionList:
-  - QuestionContent: Rak ini hanya ada 1 barang
-    answerIndex: 2
-  - QuestionContent: Rak ini disebelah kanan rak dengan balok-balok kecil
-    answerIndex: 4
-  - QuestionContent: Rak ini punya buku yang tingginya kebanyakan sama
-    answerIndex: 6
-  - QuestionContent: Rak ini disebelah kanan rak dengan 2 patung kecil
-    answerIndex: 7
-  - QuestionContent: semua barang di rak ini bukan buku dan ada di bagian tengah
-    answerIndex: 8
-  - QuestionContent: Rak dengan 4 kotak pensil warna
-    answerIndex: 9
-  - QuestionContent: Rak ini disebelah kanan rak dengan 2 pot bunga
-    answerIndex: 11
-  - QuestionContent: Dibawah rak ini bukunya tersusun tidur semua. yang mana itu?
-    answerIndex: 13
-  - QuestionContent: Rak ini dibawah rak dengan 2 lukisan
-    answerIndex: 10
-  - QuestionContent: Rak ini disebelah kiri rak dengan 1 lukisan
-    answerIndex: 1
-  - QuestionContent: Rak ini diatas rak dengan 2 pot bunga
-    answerIndex: 7
-  - QuestionContent: Rak dengan bola-bola besi yang diikat
-    answerIndex: 14
   questiontext: {fileID: 802184803}
   Victory: {fileID: 1506100166}
   AnswerChoices:
@@ -2706,6 +2677,19 @@ MonoBehaviour:
   - {fileID: 179920153}
   - {fileID: 88870434}
   - {fileID: 966357044}
+  QuestionList:
+  - {fileID: 11400000, guid: 2ada2456301120a4e9b63c3c17dc6119, type: 2}
+  - {fileID: 11400000, guid: 60761d5dd11cf8f43a76dbd9777739cb, type: 2}
+  - {fileID: 11400000, guid: ddee60a6ce14eae43b3091f3f1db4fee, type: 2}
+  - {fileID: 11400000, guid: 3327625ed54464344b9c7ccd1cc89f53, type: 2}
+  - {fileID: 11400000, guid: c712fa2440b325246852c57175f27894, type: 2}
+  - {fileID: 11400000, guid: ee64e3deb0dc51d4483739e8fb3cd4b7, type: 2}
+  - {fileID: 11400000, guid: 53045587569f4524586ffc794feed1cc, type: 2}
+  - {fileID: 11400000, guid: f1b29ab7cd5ac414c9bc3f26b70d1601, type: 2}
+  - {fileID: 11400000, guid: d4892ab0628941b4085d32c57086a4fb, type: 2}
+  - {fileID: 11400000, guid: 51145a363b32b404db29c8c1972b232a, type: 2}
+  - {fileID: 11400000, guid: c9b0924085455a44f98f4df9ae9f0c77, type: 2}
+  - {fileID: 11400000, guid: f310494095341bd4785778f638ef73b8, type: 2}
 --- !u!4 &1458070667
 Transform:
   m_ObjectHideFlags: 0

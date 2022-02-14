@@ -2,24 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
 public class FindObjectCase : MonoBehaviour
 {
-    [System.Serializable]
-    public class ImgQuestion
+   
+    /*public class ImgQuestion
     {
         [Header("Soal")]
         [TextArea] public string QuestionContent;
 
         public int answerIndex;
-    }
+    }*/
 
     public Image Scenery;
 
-    public List<ImgQuestion> QuestionList = new List<ImgQuestion>();   
+    
     private Image gambarSoal;
     [SerializeField] private Text questiontext;  
     [SerializeField] private GameObject Victory;
     [SerializeField] Button[] AnswerChoices;
+
+    
+    public List<QuestionObject> QuestionList = new List<QuestionObject>();
 
     private int index, randomCase;
     
@@ -31,23 +35,26 @@ public class FindObjectCase : MonoBehaviour
         //gambarSoal = Scenery;
 
         index = Random.Range(0, QuestionList.Count);
-      
+        NextRandomQuestion();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (QuestionList.Count > 0)
+        
+    }
+
+    void SetQuestion()
+    {
+        var question = QuestionList[index];
+        questiontext.text = question.QuestionContent;
+
+        if (question is ImageQuestionObject imageQuestion)
         {
-            questiontext.text = QuestionList[index].QuestionContent;                    
-        }
-        else
-        {
-            //currentLimit = 0;
-            Victory.SetActive(true);
-            //timeText.gameObject.SetActive(false);
-            Debug.Log("Quiz Over");
-        }
+            gambarSoal.sprite = imageQuestion.gambar;
+        }        
+        else Debug.Log("Proceeding Without Image");
+       
     }
 
     public void AnswerCheck(int answer)
@@ -64,20 +71,26 @@ public class FindObjectCase : MonoBehaviour
         }
     }
 
-    void nextRandomQuestion()
+    void NextRandomQuestion()
     {
-        if (QuestionList.Count > 0)
+        if (QuestionList.Count <= 1)
         {
-            QuestionList.RemoveAt(index);
-            if (QuestionList.Count <= 0)
-            {
-                Debug.Log("Quiz Over");
-                FindObjectOfType<AudioManager>().StopMusic("Level Music");
-                FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
-            }
+            StopQuiz();
+            return;
         }
+
+        QuestionList.RemoveAt(index);
         index = Random.Range(0, QuestionList.Count);
-    }   
+        SetQuestion();
+    }
+
+    void StopQuiz()
+    {
+        Debug.Log("Quiz Over");
+        FindObjectOfType<AudioManager>().StopMusic("Level Music");
+        FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
+        Victory.SetActive(true);
+    }
 
     IEnumerator ButtonTransition(float delay)
     {
@@ -92,6 +105,6 @@ public class FindObjectCase : MonoBehaviour
         {
             AnswerChoices[i].interactable = true;
         }
-        nextRandomQuestion();
+        NextRandomQuestion();
     }
 }
