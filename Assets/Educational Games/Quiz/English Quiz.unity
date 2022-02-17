@@ -262,6 +262,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 45367442}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &45367445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 401503865665141918, guid: a762a57c0fd7efc40809507d04ab8ea5,
+    type: 3}
+  m_PrefabInstance: {fileID: 45367442}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &133804073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,6 +1929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gambarSoal: {fileID: 716453511}
   questiontext: {fileID: 340110178}
+  HighScoreText: {fileID: 45367445}
   answerText:
   - {fileID: 449841103}
   - {fileID: 832027660}
@@ -2037,6 +2050,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e96c5315105bf943ba2ab89e646cb87, type: 2}
   - {fileID: 11400000, guid: ead42a8bcd5477e46956c5a11a6ae240, type: 2}
   - {fileID: 11400000, guid: 6820fe79348859b45a959a9d643f7440, type: 2}
+  Score: 0
   AnswerChoices:
   - {fileID: 2085455764}
   - {fileID: 917039113}

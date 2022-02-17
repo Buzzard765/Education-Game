@@ -18,11 +18,12 @@ public class FindObjectCase : MonoBehaviour
 
     
     private Image gambarSoal;
-    [SerializeField] private Text questiontext;  
+    [SerializeField] private Text questiontext, HighScoreText, ScoreText;  
     [SerializeField] private GameObject Victory;
     [SerializeField] Button[] AnswerChoices;
 
-    
+    [SerializeField] int Score;
+
     public List<QuestionObject> QuestionList = new List<QuestionObject>();
 
     private int index, randomCase;
@@ -35,7 +36,7 @@ public class FindObjectCase : MonoBehaviour
         //gambarSoal = Scenery;
 
         index = Random.Range(0, QuestionList.Count);
-        NextRandomQuestion();
+        SetQuestion();
     }
 
     // Update is called once per frame
@@ -63,12 +64,15 @@ public class FindObjectCase : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().PlaySound("Correct");
             StartCoroutine(ButtonTransition(2f));
+            Score++;
         }
         else
         {
             Debug.Log("Wrong Answer");
             FindObjectOfType<AudioManager>().PlaySound("Wrong");
+            StartCoroutine(ButtonTransition(2f));
         }
+        ScoreText.text = "Skor : " + Score.ToString();
     }
 
     void NextRandomQuestion()
@@ -90,6 +94,7 @@ public class FindObjectCase : MonoBehaviour
         FindObjectOfType<AudioManager>().StopMusic("Level Music");
         FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
         Victory.SetActive(true);
+        HighScoreText.text = "Skor yang didapat:\n" + Score.ToString();
     }
 
     IEnumerator ButtonTransition(float delay)

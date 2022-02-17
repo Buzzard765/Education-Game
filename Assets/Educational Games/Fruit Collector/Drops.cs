@@ -53,7 +53,7 @@ public class Drops : MonoBehaviour
                 Debug.Log("fruit Colletcted");
                 Destroy(gameObject);
                 GameManager.score += points;
-                FindObjectOfType<Timer>().Add(points);
+                FindObjectOfType<Timer>().Add(2);
                 FindObjectOfType<AudioManager>().PlaySound("Fruit");
             }
             else if (gameObject.CompareTag("Trash"))

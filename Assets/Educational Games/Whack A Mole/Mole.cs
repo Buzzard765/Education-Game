@@ -46,9 +46,9 @@ public class Mole : MonoBehaviour
         }
 
         if (minTime > 0.5f) {
-            minTime -= Time.deltaTime / 100;
+            minTime -= Time.deltaTime / 10;
         }
-        if (maxTime < 3) {
+        if (maxTime < 1.5f) {
             maxTime += Time.deltaTime / 100;
         }
     }

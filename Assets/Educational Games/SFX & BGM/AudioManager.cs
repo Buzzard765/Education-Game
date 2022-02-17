@@ -27,6 +27,9 @@ public class AudioManager : MonoBehaviour
             music.source.volume = music.volume;
             music.source.outputAudioMixerGroup = BGMVol;
         }
+
+        Debug.Log(PlayerPrefs.GetFloat("BGM", Slider_BGM.value));
+        Debug.Log(PlayerPrefs.GetFloat("SFX", Slider_SFX.value));
     }
 
     public void PlaySound(string name)
@@ -62,10 +65,13 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetFloat("BGM", Volume);
     }
 
+    
+
     void Start()
     {        
         Slider_BGM.value = PlayerPrefs.GetFloat("BGM", Slider_BGM.value);
         Slider_SFX.value =  PlayerPrefs.GetFloat("SFX", Slider_SFX.value);
+        
     }
 
     // Update is called once per frame

@@ -18,5 +18,5 @@ MonoBehaviour:
   - content: di rumah
   - content: tidak dikerjakan
   - content: semua salah
-  answerIndex: 0
+  answerIndex: 1
   gambar: {fileID: 21300000, guid: aac13dd6546f9d641be8bea69c39e0eb, type: 3}

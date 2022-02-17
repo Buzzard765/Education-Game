@@ -350,6 +350,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 310670900}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &310670903 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 401503865665141918, guid: a762a57c0fd7efc40809507d04ab8ea5,
+    type: 3}
+  m_PrefabInstance: {fileID: 310670900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &340110175
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,12 +556,12 @@ GameObject:
   - component: {fileID: 493119010}
   - component: {fileID: 493119009}
   m_Layer: 5
-  m_Name: Time Limit
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &493119008
 RectTransform:
   m_ObjectHideFlags: 0
@@ -566,8 +578,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 166.36, y: 429.82}
-  m_SizeDelta: {x: 198.0813, y: 53.921387}
+  m_AnchoredPosition: {x: 261.7, y: 403.85}
+  m_SizeDelta: {x: 388.85168, y: 105.8526}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &493119009
 MonoBehaviour:
@@ -606,7 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -614,18 +626,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 72efb79a22a78644cb2751666e446b4f, type: 3}
-    m_FontSize: 40
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 4
+    m_MaxSize: 50
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Score : '
 --- !u!222 &493119011
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2087,6 +2099,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gambarSoal: {fileID: 716453511}
   questiontext: {fileID: 340110178}
+  HighScoreText: {fileID: 310670903}
+  ScoreText: {fileID: 493119010}
   answerText:
   - {fileID: 449841103}
   - {fileID: 832027660}
@@ -2191,7 +2205,20 @@ MonoBehaviour:
     - content: Kakek-Nenek
     - content: Semua Pihak
     answerIndex: 3
-  Questions: []
+  Questions:
+  - {fileID: 11400000, guid: b9ce76cadf45eb84a9170b9f108304ab, type: 2}
+  - {fileID: 11400000, guid: bef47bd3cec63804a8db417cc3f18b38, type: 2}
+  - {fileID: 11400000, guid: 0ecf5ebfa93e4374387df0c942afcd82, type: 2}
+  - {fileID: 11400000, guid: d98b3806c14b5514197a07aa8aac8297, type: 2}
+  - {fileID: 11400000, guid: 7f4f4ecd4b1b8f64aa65fa255a414e23, type: 2}
+  - {fileID: 11400000, guid: 5d1086a164dec9141a9b77e53daa7bce, type: 2}
+  - {fileID: 11400000, guid: ac6e2a4163cbbb04d890592ad4cba15b, type: 2}
+  - {fileID: 11400000, guid: 4850b2be39aa7fe4b99a85add72d0740, type: 2}
+  - {fileID: 11400000, guid: faccad8ac3ae73c41a97fb4882eed8a1, type: 2}
+  - {fileID: 11400000, guid: cb00bb9b956435549a77eaf799f03199, type: 2}
+  - {fileID: 11400000, guid: dfdaaeecbf1380341af391a2cf5f2211, type: 2}
+  - {fileID: 11400000, guid: 39ae771e06554f14d97216dcae6c26f1, type: 2}
+  Score: 0
   AnswerChoices:
   - {fileID: 2085455764}
   - {fileID: 917039113}

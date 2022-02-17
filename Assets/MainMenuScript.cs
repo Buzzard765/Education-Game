@@ -49,17 +49,18 @@ public class MainMenuScript : AllUIButtons
 
     public void leanTweenSlide(RectTransform Panel) {
         
-        Vector3 StartPos = Panel.GetComponent<RectTransform>().anchoredPosition;
+        Vector3 PanelPos = Panel.GetComponent<RectTransform>().anchoredPosition;
+        float StartPos = PanelPos.y;
         if (Panel.gameObject.activeSelf == false)
         {
             Panel.gameObject.SetActive(true);
             LeanTween.move
-                (Panel, new Vector3(StartPos.x, StartPos.y - 1200f, StartPos.z), 0.5f)
+                (Panel, new Vector3(PanelPos.x, PanelPos.y - StartPos, PanelPos.z), 0.5f)
                 .setEaseOutBounce();
            
         }
         else {
-            LeanTween.move(Panel, new Vector3(StartPos.x, StartPos.y + 1200f, StartPos.z), 0.5f);
+            LeanTween.move(Panel, new Vector3(PanelPos.x, PanelPos.y + StartPos, PanelPos.z), 0.5f);
             Panel.gameObject.SetActive(false);
             //Panel.LeanMove(new Vector3(StartPos.x, StartPos.y + 1200f, Panel.transform.position.z), 0.5f);
 

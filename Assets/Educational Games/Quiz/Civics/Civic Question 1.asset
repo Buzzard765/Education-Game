@@ -18,5 +18,5 @@ MonoBehaviour:
   - content: berkelahi
   - content: bermain
   - content: semua salah
-  answerIndex: 2
+  answerIndex: 1
   gambar: {fileID: 21300000, guid: 0a95f18dd801c62459a9934c550edf14, type: 3}

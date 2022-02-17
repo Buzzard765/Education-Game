@@ -20,6 +20,7 @@ public class TicTacToeController : MonoBehaviour
 
     [SerializeField] private RectTransform WinPanel, DrawPanel;
     [SerializeField] private Text PanelText, XScoreText, OScoreText, WinOrDraw;
+    [SerializeField] GameObject StartGuide, TurnGuide;
 
     private AudioSource AllAudio;
     private AudioSource BGM;
@@ -52,6 +53,8 @@ public class TicTacToeController : MonoBehaviour
             WinningLine[i].SetActive(false);
         }
         AllAudio = GetComponent<AudioSource>();
+        StartGuide.SetActive(true);
+        TurnGuide.SetActive(false);
     
     }
 
@@ -65,7 +68,7 @@ public class TicTacToeController : MonoBehaviour
 
         XPlayer.interactable = false;
         OPlayer.interactable = false;
-
+        
         TTTSpace[slot].image.sprite = PlayerIcons[PlayerTurn];
         TTTSpace[slot].interactable = false;
         MarkedSpace[slot] = PlayerTurn+1;
@@ -178,6 +181,8 @@ public class TicTacToeController : MonoBehaviour
             TTTSpace[i].interactable = true;
             //TTTSpace[i].GetComponent<Image>().sprite = null;
         }
+        StartGuide.SetActive(false);
+        TurnGuide.SetActive(true);
     }
 
     public void Rematch(RectTransform Panel) {
@@ -209,6 +214,8 @@ public class TicTacToeController : MonoBehaviour
 
         XPlayer.interactable = true;
         OPlayer.interactable = true;
+        StartGuide.SetActive(true);
+        TurnGuide.SetActive(false);
         StartCoroutine(ReturnPanel(Panel));
     }
 

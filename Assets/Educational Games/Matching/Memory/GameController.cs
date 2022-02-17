@@ -19,8 +19,8 @@ public class GameController : MonoBehaviour
     private AudioSource allAudio;
 
     [SerializeField] AudioClip SFX_Wrong, SFX_Right;
-
-    [SerializeField] private GameObject WinPanel;
+    [SerializeField] Text HighScore;
+    [SerializeField] private RectTransform WinPanel;
 
     // Start is called before the first frame update
     // 
@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
     {
         pictures = Resources.LoadAll<Sprite>("Sprites/"+ spriteName);
         allAudio = GetComponent<AudioSource>();      
-        WinPanel.SetActive(false);
+        WinPanel.gameObject.SetActive(false);
     }
     void Start()
     {
@@ -129,14 +129,16 @@ public class GameController : MonoBehaviour
     }
 
     void LimitCheck() {
-        Vector3 PanelPos = WinPanel.transform.position;
+        Vector3 PanelPos = WinPanel.GetComponent<RectTransform>().anchoredPosition;
+        float startPosY = PanelPos.y;
         CorrectPair++;
         if (CorrectPair == PairLimit) {
-            FindObjectOfType<AudioManager>().StopMusic("Wrong");
+            FindObjectOfType<AudioManager>().StopMusic("Level Music");
             FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
-            WinPanel.SetActive(true);
-            LeanTween.move(WinPanel, new Vector3(PanelPos.x, PanelPos.y - 1081f, PanelPos.z), 1f).setEaseOutBounce();
+            WinPanel.gameObject.SetActive(true);
+            LeanTween.move(WinPanel, new Vector3(PanelPos.x, PanelPos.y - startPosY, PanelPos.z), 1f).setEaseOutBounce();
             Debug.Log("Game Cleared");
+            HighScore.text = "Kamu Selesai dengan " + Guesses.ToString() + " tebakan";
             Debug.Log("you've made" + Guesses + "guesses to finish");
         }
     }

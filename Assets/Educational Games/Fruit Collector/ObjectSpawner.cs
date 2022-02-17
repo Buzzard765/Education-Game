@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using Manager;
 public class ObjectSpawner : MonoBehaviour
 {
-    public GameObject fruits, trash;
+    [SerializeField] private GameObject[] fruits;
+    [SerializeField]private GameObject trash;
     public GameObject[] trees;
     [SerializeField]private float spawnrate;
     private float setSpawnRate;
@@ -45,7 +46,8 @@ public class ObjectSpawner : MonoBehaviour
                 drops = Random.Range(0, 3);
                 if (drops < 3)
                 {
-                    Instantiate(fruits, trees[Random.Range(0, trees.Length - 1)].transform.position, Quaternion.identity);
+                    Instantiate(fruits[Random.Range(0, fruits.Length)], 
+                        trees[Random.Range(0, trees.Length - 1)].transform.position, Quaternion.identity);
                 }
                 else if (drops >= 3)
                 {

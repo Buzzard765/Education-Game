@@ -22,13 +22,14 @@ public class QuizQuestion : MonoBehaviour
     }
 
     [SerializeField] private Image gambarSoal;
-    [SerializeField] private Text questiontext;
+    [SerializeField] private Text questiontext, HighScoreText, ScoreText;
     [SerializeField] private Text[] answerText = new Text[4];
     [FormerlySerializedAs("Victory")] [SerializeField] private GameObject victory;
 
     public List<ImgQuestion> QuestionList = new List<ImgQuestion>();
     public List<QuestionObject> Questions = new List<QuestionObject>();
     private int index;
+    [SerializeField] int Score;
     [SerializeField] Button[] AnswerChoices;
 
     private AudioSource allAudio, BGM;
@@ -52,8 +53,8 @@ public class QuizQuestion : MonoBehaviour
         index = Random.Range(0, Questions.Count);
                         
         victory.SetActive(false);
-        
-        NextRandomQuestion();
+
+        SetQuestion();
     }
 
 
@@ -64,14 +65,16 @@ public class QuizQuestion : MonoBehaviour
         if (isCorrect)
         {
             FindObjectOfType<AudioManager>().PlaySound("Correct");
-            StartCoroutine(ButtonTransition(2f));
-            
+            Score++;
+            StartCoroutine(ButtonTransition(2f));           
         }
         else 
         {
             Debug.Log("Wrong Answer");
             FindObjectOfType<AudioManager>().PlaySound("Wrong");
-        }       
+            StartCoroutine(ButtonTransition(2f));
+        }
+        ScoreText.text = "Skor : " + Score.ToString();
     }    
         
     void NextRandomQuestion()
@@ -80,12 +83,9 @@ public class QuizQuestion : MonoBehaviour
         {
             StopQuiz();
             return;
-        }
-        
-        Questions.RemoveAt(index);
-        
+        }        
+        Questions.RemoveAt(index);        
         index = Random.Range(0, Questions.Count);
-
         SetQuestion();
     }
 
@@ -114,7 +114,8 @@ public class QuizQuestion : MonoBehaviour
         Debug.Log("Quiz Over");
         FindObjectOfType<AudioManager>().StopMusic("Level Music");
         FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");  
-        victory.SetActive(true);  
+        victory.SetActive(true);
+        HighScoreText.text = "Skor yang didapat:\n" + Score.ToString();
     }
 
     IEnumerator ButtonTransition(float delay)
