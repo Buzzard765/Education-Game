@@ -8,10 +8,13 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : AllUIButtons
 {
     [SerializeField] List<GameObject> Panel = new List<GameObject>();
+    int LastActivePanel;
     // Start is called before the first frame update
     void Start()
     {
         FindObjectOfType<AudioManager>().PlayMusic("Main Menu");
+        LastActivePanel = PlayerPrefs.GetInt("ActivePanel", LastActivePanel);
+        SwitchPanel(LastActivePanel);
     }
 
     // Update is called once per frame
@@ -38,6 +41,7 @@ public class MainMenuScript : AllUIButtons
         for (int i = 0; i < Panel.Count; i++) {
             var PanelIndex = Panel[i];
             PanelIndex.SetActive(i == index);
+            PlayerPrefs.SetInt("ActivePanel", index);
         }        
     }
 

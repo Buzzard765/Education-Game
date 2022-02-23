@@ -88,7 +88,7 @@ public class MoleSpawning : MonoBehaviour
         else
         {
             currentspawnRate -= Time.deltaTime;
-        }
+        }   
     }
 
     void spawnMole(int index) {

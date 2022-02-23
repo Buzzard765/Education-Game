@@ -21,6 +21,8 @@ public class QuizQuestion : MonoBehaviour
         public string content;
     }
 
+    [SerializeField] private Timer timer;
+
     [SerializeField] private Image gambarSoal;
     [SerializeField] private Text questiontext, HighScoreText, ScoreText;
     [SerializeField] private Text[] answerText = new Text[4];
@@ -29,15 +31,25 @@ public class QuizQuestion : MonoBehaviour
     public List<ImgQuestion> QuestionList = new List<ImgQuestion>();
     public List<QuestionObject> Questions = new List<QuestionObject>();
     private int index;
+    private float TimeLimit;
+    public float SetTimeLimit;
     [SerializeField] int Score;
     [SerializeField] Button[] AnswerChoices;
 
     private AudioSource allAudio, BGM;
     [SerializeField] AudioClip SFX_Wrong, SFX_Correct, SFX_Clear;
     // Start is called before the first frame update
+    private void OnEnable()
+    {
+        timer.onTimerExpired += SkipQuestion;
+    }
+    private void OnDisable()
+    {
+        timer.onTimerExpired -= SkipQuestion;
+    }
     void Start()
     {
-        allAudio = GetComponent<AudioSource>();
+        
         //BGM = GameObject.Find("BGM").GetComponent<AudioSource>();
         FindObjectOfType<AudioManager>().PlayMusic("Level Music");
 
@@ -51,28 +63,36 @@ public class QuizQuestion : MonoBehaviour
         }*/
                 
         index = Random.Range(0, Questions.Count);
-                        
+        timer.startTimer(SetTimeLimit);                
         victory.SetActive(false);
 
         SetQuestion();
+    }
+
+    private void Update()
+    {
+        Debug.Log(timer.Limit);
     }
 
 
     public void AnswerCheck(int answer)
     {
         bool isCorrect = Questions[index].answerIndex == answer;
-        
-        if (isCorrect)
+
+        if (isCorrect == true)
         {
             FindObjectOfType<AudioManager>().PlaySound("Correct");
             Score++;
-            StartCoroutine(ButtonTransition(2f));           
+            StartCoroutine(ButtonTransition(2f));
+
+            AnswerChoices[answer].image.color = Color.blue;
         }
-        else 
+        else if (isCorrect == false || TimeLimit <= 0)
         {
             Debug.Log("Wrong Answer");
             FindObjectOfType<AudioManager>().PlaySound("Wrong");
             StartCoroutine(ButtonTransition(2f));
+            AnswerChoices[answer].image.color = Color.red;
         }
         ScoreText.text = "Skor : " + Score.ToString();
     }    
@@ -84,7 +104,8 @@ public class QuizQuestion : MonoBehaviour
             StopQuiz();
             return;
         }        
-        Questions.RemoveAt(index);        
+        Questions.RemoveAt(index);
+        timer.startTimer(SetTimeLimit);
         index = Random.Range(0, Questions.Count);
         SetQuestion();
     }
@@ -93,7 +114,7 @@ public class QuizQuestion : MonoBehaviour
     {
         var question = Questions[index];
         questiontext.text = question.QuestionContent;
-
+       
         if (question is ImageQuestionObject imageQuestion)
         {
             gambarSoal.sprite = imageQuestion.gambar;
@@ -112,23 +133,37 @@ public class QuizQuestion : MonoBehaviour
     void StopQuiz()
     {
         Debug.Log("Quiz Over");
-        FindObjectOfType<AudioManager>().StopMusic("Level Music");
-        FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");  
+        FindObjectOfType<AudioManager>().StopMusic("Level Music");       
         victory.SetActive(true);
         HighScoreText.text = "Skor yang didapat:\n" + Score.ToString();
+        if (Score > 6) {
+            FindObjectOfType<AudioManager>().PlayMusic("Stage Clear");
+        }
+        else {
+            FindObjectOfType<AudioManager>().PlayMusic("Stage Failed");
+        }
+    }
+
+    void SkipQuestion() {
+        FindObjectOfType<AudioManager>().PlaySound("Wrong");
+        StartCoroutine(ButtonTransition(2f));
     }
 
     IEnumerator ButtonTransition(float delay)
     {
+        timer.HaltTimer(timer.Limit);
         for (int i = 0; i < AnswerChoices.Length; i++)
         {
             AnswerChoices[i].interactable = false;
+            
         }
         yield return new WaitForSeconds(delay);
         for (int i = 0; i < AnswerChoices.Length; i++)
         {
-            AnswerChoices[i].interactable = true    ;
+            AnswerChoices[i].interactable = true;
+            AnswerChoices[i].image.color = Color.white;
         }
+        
         NextRandomQuestion();
     }
 }

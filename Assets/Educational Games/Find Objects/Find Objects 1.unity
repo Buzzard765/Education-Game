@@ -288,7 +288,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2ab77499624e1b5428a4dbc96202a974, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4849fe2ef6601c648b78f1ad9b326a7b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -504,7 +504,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score : '
+  m_Text: 'skor:'
 --- !u!222 &228269296
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -3758,7 +3758,7 @@ PrefabInstance:
     - target: {fileID: 1939759460499119655, guid: e861d5699334c774a8bebd45f94f4afc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 970
+      value: 1027.0001
       objectReference: {fileID: 0}
     - target: {fileID: 1939759460499119655, guid: e861d5699334c774a8bebd45f94f4afc,
         type: 3}
@@ -4439,32 +4439,32 @@ PrefabInstance:
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 959.99994
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
@@ -4509,7 +4509,7 @@ PrefabInstance:
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 972
+      value: 1027.0001
       objectReference: {fileID: 0}
     - target: {fileID: 7165511943690335781, guid: 669aa514a63d73940ac6532576e588e2,
         type: 3}
@@ -11695,7 +11695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 970}
+  m_AnchoredPosition: {x: 0, y: 1027.0001}
   m_SizeDelta: {x: 1920, y: 959.99994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7677965839863594591

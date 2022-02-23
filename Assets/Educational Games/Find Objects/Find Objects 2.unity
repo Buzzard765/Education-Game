@@ -278,7 +278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12522222, y: 0.080000006}
   m_AnchorMax: {x: 0.87500006, y: 1}
-  m_AnchoredPosition: {x: -1.8167725, y: 37.69998}
+  m_AnchoredPosition: {x: -1.8168945, y: 37.69995}
   m_SizeDelta: {x: 4.7980957, y: 72.37695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &82342292
@@ -2183,7 +2183,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score : '
+  m_Text: 'skor : '
 --- !u!222 &992827465
 CanvasRenderer:
   m_ObjectHideFlags: 0

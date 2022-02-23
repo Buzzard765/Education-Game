@@ -58,7 +58,7 @@ public class Mole : MonoBehaviour
 
         MoleState = states.inGround;
         animator.SetFloat("state", -1);
-        OutGroundTime = Random.Range(0.5f, 3);
+        OutGroundTime = Random.Range(minTime, maxTime);
         //animator.SetFloat("state", 1);
             
     }
@@ -68,12 +68,11 @@ public class Mole : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && MoleState == states.OutGround) {
             Debug.Log("Gotcha");
             MoleState = states.KnockedOut;
-            AllAudio.PlayOneShot(SFX_Knock);
+            
             StartCoroutine(KnockOut());
             FindObjectOfType<MoleSpawning>().score_get += 1;
             FindObjectOfType<Timer>().Add(2);
-            onGround = false;
-            
+            onGround = false;            
         }
     }
 

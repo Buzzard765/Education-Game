@@ -8,13 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Title Screen.unity
     guid: 9b2b8cfd5aeb04148ad2f85d1e596edc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Educational Games/Main Menu.unity
     guid: 240282eee58e8614a9ba6216f583b4e5
   - enabled: 1
+    path: Assets/Educational Games/Main Menu - Alternate.unity
+    guid: 9808de9d1ba252649b5ca2414b7094be
+  - enabled: 0
     path: Assets/Educational Games/Maze/Maze 1.unity
     guid: 888be83bdb604764cbf7e70b095ffaf3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Educational Games/Maze/Maze 2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -35,7 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Educational Games/Quiz/English Quiz.unity
     guid: b0a878ebfacaaf6408b576bef934050b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Educational Games/Matching/Memory Matching 1.unity
     guid: 0d9f28414a730e44b9d42319572b2d58
   - enabled: 1
@@ -50,7 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Educational Games/TicTacToe/Tic Tac Toe.unity
     guid: c595af7fe5295ec4fb130d3c9eb616ca
-  - enabled: 1
+  - enabled: 0
     path: Assets/Educational Games/Find Objects/Find Objects 1.unity
     guid: 76cfc5efafb5f884fa321f44644d2ce8
   - enabled: 1

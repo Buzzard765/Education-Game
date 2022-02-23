@@ -12,12 +12,18 @@ namespace Utility {
         public float Limit;
         private bool onTick;
 
-        private Text Text_Timer;
+        [SerializeField]private Text Text_Timer;
         // Start is called before the first frame update
 
         public void startTimer(float duration)
         {
             onTick = true;
+            Limit = duration;
+        }
+
+        public void HaltTimer(float duration)
+        {
+            onTick = false;
             Limit = duration;
         }
 
@@ -27,7 +33,7 @@ namespace Utility {
 
         void Start()
         {
-            Text_Timer = GameObject.Find("Timer").GetComponent<Text>();
+            //Text_Timer = GameObject.Find("Timer").GetComponent<Text>();
         }
 
         // Update is called once per frame
