@@ -18,7 +18,7 @@ public class Drops : MonoBehaviour
 
     private void Awake()
     {
-        GameManager = GameObject.Find("GameManager").GetComponent<Core>();        
+        //GameManager = GameObject.Find("GameManager").GetComponent<Core>();        
     }
 
     void Start()
@@ -33,7 +33,7 @@ public class Drops : MonoBehaviour
     void Update()
     {
         transform.Rotate(0,0,spin);
-        if (GameManager.onPlay == false) {
+        if (FindObjectOfType<Core>().onPlay == false) {
             Destroy(gameObject);
         }
     }
@@ -52,7 +52,7 @@ public class Drops : MonoBehaviour
             if (gameObject.CompareTag("Fruit")) {
                 Debug.Log("fruit Colletcted");
                 Destroy(gameObject);
-                GameManager.score += points;
+                FindObjectOfType<Core>().score += points;
                 FindObjectOfType<Timer>().Add(2);
                 FindObjectOfType<AudioManager>().PlaySound("Fruit");
             }
@@ -60,7 +60,7 @@ public class Drops : MonoBehaviour
             {
                 Debug.Log("trash Colletcted");
                 Destroy(gameObject);
-                GameManager.score -= points;               
+                FindObjectOfType<Core>().score -= points;               
                 FindObjectOfType<AudioManager>().PlaySound("Trash");
             }           
         }

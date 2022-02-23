@@ -9542,7 +9542,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Untuk keluar dari Labirin ini, kamu perlu:'
+  m_text: 'Untuk keluar dari Labirin ini, kamu perlu Mengambil:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ba16412c422c1b04682d4cf7d7c2bd20, type: 2}
   m_sharedMaterial: {fileID: -3177055756161537465, guid: ba16412c422c1b04682d4cf7d7c2bd20,
@@ -9570,8 +9570,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
