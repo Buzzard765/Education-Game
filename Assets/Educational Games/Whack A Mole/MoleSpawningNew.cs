@@ -92,12 +92,12 @@ public class MoleSpawningNew : MonoBehaviour
     {
         int rand = Random.Range(0, 5);
         Debug.Log(rand);
-        if (rand < 1)
+        if (rand < 2)
         {
             HoleList[index].Rock.SetActive(true);
             Debug.Log("Rock", HoleList[index].Rock);
         }
-        else if (rand >= 1)
+        else if (rand >= 2)
         {
             HoleList[index].Mole.SetActive(true);
             Debug.Log("Mole", HoleList[index].Mole);

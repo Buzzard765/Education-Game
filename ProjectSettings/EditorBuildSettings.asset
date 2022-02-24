@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Title Screen.unity
     guid: 9b2b8cfd5aeb04148ad2f85d1e596edc
   - enabled: 0
-    path: Assets/Educational Games/Main Menu.unity
+    path: Assets/Educational Games/Main Menu - Old.unity
     guid: 240282eee58e8614a9ba6216f583b4e5
   - enabled: 1
-    path: Assets/Educational Games/Main Menu - Alternate.unity
+    path: Assets/Educational Games/Main Menu.unity
     guid: 9808de9d1ba252649b5ca2414b7094be
   - enabled: 0
     path: Assets/Educational Games/Maze/Maze 1.unity
@@ -48,6 +48,9 @@ EditorBuildSettings:
     path: Assets/Educational Games/Fruit Collector/Fruit Collector.unity
     guid: 7517496baa4c1e646bb5e07123c22e55
   - enabled: 1
+    path: Assets/Educational Games/Whack A Mole/Whack a Mole-New.unity
+    guid: 285d1beb2c2de8641b7b9d8a19eaddcd
+  - enabled: 0
     path: Assets/Educational Games/Whack A Mole/Whack a Mole.unity
     guid: 9ebbb3a61369cdd49a974670ff7a3ad7
   - enabled: 1
